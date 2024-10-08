@@ -1,0 +1,31 @@
+.cabecalho{
+    background-color: #fff;
+    width: 100%;
+    .principal{
+        display: flex;
+        justify-content: space-around ;
+        padding: 20px 30px;
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
+            
+    a{
+        text-decoration: none;
+        font: 400 24px 'K2D';
+        color: #50301E;
+    }         
+    
+    .botao-adm{
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+}

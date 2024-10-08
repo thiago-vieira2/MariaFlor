@@ -1,0 +1,41 @@
+body{
+}
+
+.add-uni{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    
+    .barra{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 81px;
+        border-radius: 20px;
+        background-color: #FFDACF;
+    }
+
+    .adicionar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .endereco{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .funcionamento{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+}
