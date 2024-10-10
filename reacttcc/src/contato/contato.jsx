@@ -9,7 +9,7 @@ function Contato() {
       </header>
 
       <div className="fundo">
-        <img className='churros' src="./images/churros.jpg" alt=""  />
+        <img className='cenoura' src="./images/cenoura." alt=""  />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ function Cabecalho() {
   return (
     <div className="cabecalho">
       <header className="principal">
-        <img src="./images/mariaflor_c_logo.png" alt="logo" width={240}/>
+        <img src="./images/mariaflor_c_logo.png" alt="logo" width={220}/>
         <nav>
           <a href="./inicio">Inicio</a>
           <a href="">Produtos</a>
