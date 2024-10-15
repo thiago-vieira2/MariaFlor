@@ -1,0 +1,101 @@
+body{
+
+}
+
+.pagina-contato{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        margin-top: 100px;
+        margin-bottom: 50px;
+        font: 600 30px 'Arial';
+    }
+
+    .cappuccino{
+        display: flex;
+        width: 100%;
+        position: relative;
+
+    }
+
+    .interativo{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 100px;
+    }
+    
+    .cima{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .campos{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        
+    }
+
+    .campos input{
+        width: 550px;
+        height: 40px;
+        border-radius: 10px;
+        padding: 10px 25px;
+        background-color: #FFDACF;
+        border: none;
+    }
+    
+    .imagem{
+        width: 300px;
+        height: 190px;
+        background-color: #FFDACF;
+        border: 2px dashed #50301e;
+        border-radius: 10px;
+    }
+
+    .mensagem input{
+        width: 860px;
+        height: 200px;
+        border-radius: 10px;
+        padding: 10px 25px;
+        background-color: #FFDACF;
+        border: none;
+    }
+
+    .politica{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: flex-start;
+    }
+
+    .escrita{
+        display: flex;
+        gap: 5px;
+        font: 600 12px 'Arial';
+    }
+
+    button{
+        font: 500 20px 'Arial';
+        width: 150px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 10px;
+        background-color: #FFDACF;
+        cursor: pointer;
+    }
+    
+}

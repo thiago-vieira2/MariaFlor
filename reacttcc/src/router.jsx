@@ -3,10 +3,10 @@ import './global.scss'
 import Rodape from './components/rodape/rodape.jsx';
 import Cabecalho from './components/cabecalho/cabecalho.jsx';
 import CardProduto from './components/card-produto/cardProduto.jsx';
-import Inicio from "./inicio/inicio.jsx";
-import Contato from "./contato/contato.jsx";
-import Login from "./login/login.jsx";
-import AddUnidade from "./adicionar-unidade/adicionar-unidade.jsx";
+import Inicio from "./pages/inicio/inicio.jsx";
+import Contato from "./pages/contato/contato.jsx";
+import Login from "./pages/login/login.jsx";
+import AddUnidade from "./pages/adicionar-unidade/adicionar-unidade.jsx";
 
 
 export default function Navegacao(){

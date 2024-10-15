@@ -6,7 +6,7 @@ function Cabecalho() {
       <header className="principal">
         <img src="./images/mariaflor_c_logo.png" alt="logo" width={220}/>
         <nav>
-          <a href="./inicio">Inicio</a>
+          <a href="./">Inicio</a>
           <a href="">Produtos</a>
           <a href="">Lojas</a>
           <a href="./contato">Contato</a>

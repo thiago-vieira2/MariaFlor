@@ -1,35 +1,22 @@
 .rodape{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    
     .principal{
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: space-around;
-        gap: 200px;
+        justify-content: center;
+        flex-direction: row;
+        gap: 30%;
+        
     }
 
 
     .meio{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        gap: 40px;
+        
     }
 
     nav{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
+       
     }
-    
-    font: 400 32px 'K2D';
-    text-decoration: none;
     
 }
         

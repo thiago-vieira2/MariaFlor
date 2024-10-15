@@ -1,6 +1,6 @@
 import './adicionar-unidade.scss';
-import Cabecalho from '../components/cabecalho/cabecalho.jsx';
-import Rodape from '../components/rodape/rodape.jsx';
+import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
+import Rodape from '../../components/rodape/rodape.jsx';
 
 function AddUnidade() {
   return (
