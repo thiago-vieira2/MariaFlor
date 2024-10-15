@@ -4,7 +4,7 @@ function Rodape() {
   return (
     <div className="rodape">
       <footer className="principal">
-        <img className="logo" src="./images/mariaflor_logo.png" alt="" width={180} />
+        <img className="logo" src="./images/mariaflor_logo.png" alt="" width={140} />
         <div className='meio'>
           <nav>
             <a href="">Sobre Nós</a>
@@ -15,9 +15,9 @@ function Rodape() {
           <p>Maria Flor 2024 ©</p>
         </div>
         <div className='icons'>
-          <img className='insta' src="./images/insta.png" alt="" width={50}/>
-          <img className="face" src="./images/face.png" alt="" width={50}/>
-          <img className='wpp' src="./images/wpp.png" alt="" width={50}/>
+          <a url="instagram.com"><img className='insta' src="./images/insta.png" alt=""/></a>
+          <a href=""><img className="face" src="./images/face.png" alt=""/></a>
+          <a href=""><img className='wpp' src="./images/wpp.png" alt=""/></a>
         </div>
       </footer>
     </div>

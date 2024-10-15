@@ -1,5 +1,11 @@
 .rodape{
-    
+    display: flex;
+    padding: 30px;
+    background-color: #FFD8D8;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
     .principal{
         display: flex;
         align-items: center;
@@ -11,11 +17,34 @@
 
 
     .meio{
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
     }
 
     nav{
-       
+       display: flex;
+       width: 100%;
+       gap: 30px;
+    }
+
+    nav a{
+        text-decoration: none;
+        font: 600 20px 'Arial';
+        color: #50301e;
+    }
+
+    .icons{
+        display: flex;
+        gap: 10px;
+    }
+
+    
+    .icons a img{
+        width: 30px;
+        cursor: pointer;
     }
     
 }

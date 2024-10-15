@@ -2,8 +2,23 @@ import './contato.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 
-function Contato() {
-  return (
+function Contato(){
+
+  
+  const handleDownload = () => {
+    // URL do PDF que você deseja baixar
+    const pdfUrl = '/caminho/para/seu/arquivo.pdf';
+    
+    // Criando um link temporário para download
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.setAttribute('download', 'seu-arquivo.pdf'); // Nome do arquivo ao ser baixado
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+  
+    return (
     <div className="pagina-contato">
       <header className="cabecalho">
         <Cabecalho/>
@@ -31,7 +46,7 @@ function Contato() {
         </div>
         <div className='politica'>
           <div className='escrita'>
-             <p>Declaro que li e estou de acordo com a </p> <a href=""> Política de Privacidade </a> <p>da Maria Flor.</p>
+             <p>Declaro que li e estou de acordo com a </p> <a href="" onClick={handleDownload}> Política de Privacidade </a> <p>da Maria Flor.</p>
           </div>
           <input type="checkbox" />
           </div>
@@ -42,8 +57,8 @@ function Contato() {
       <footer className='rodape'>
         <Rodape/>
       </footer>
-    </div>
+    </div>  
   );
 }
 
-export default Contato;
+export default Contato ;
