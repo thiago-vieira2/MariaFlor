@@ -1,15 +1,15 @@
-import * as db from '../repository/estoqueRepository.js'
+import * as db from '../repository/protudoRepository.js'
 
 import { Router } from "express"
 const endpoints = Router();
 
-endpoints.post('/estoque/', async (req, resp) =>{
+endpoints.post('/produto/', async (req, resp) =>{
     try{
-        let estoque = req.body
-        let id = await db.inserirEstoque(estoque)
+        let produto = req.body
+        let id = await db.inserirProduto(produto)
 
         resp.send({
-            idEstoque: id
+            idProduto: id
         })
     }
     catch(err){
@@ -19,10 +19,10 @@ endpoints.post('/estoque/', async (req, resp) =>{
     }
 })
 
-endpoints.get('/estoque', async (req, resp) =>{
+endpoints.get('/produto', async (req, resp) =>{
     try{
-        let estoque = await db.buscarEstoque();
-        resp.send(estoque);
+        let produto = await db.buscarProduto();
+        resp.send(produto);
     }
     catch(err){
         resp.status(400).send({
@@ -31,12 +31,12 @@ endpoints.get('/estoque', async (req, resp) =>{
     }
 })
 
-endpoints.put('/estoque/:id', async (req, resp)=> {
+endpoints.put('/produto/:id', async (req, resp)=> {
     try{
         let id = req.params.id;
-        let estoque = req.body;
+        let produto = req.body;
 
-        let LinhasAfetadas = await db.alterarEstoque(id, estoque);
+        let LinhasAfetadas = await db.alterarProduto(id, produto);
         if (LinhasAfetadas >= 1){
             resp.send();
         }
@@ -52,10 +52,10 @@ endpoints.put('/estoque/:id', async (req, resp)=> {
 })
 
 
-endpoints.delete('/estoque/:id', async (req, resp) => {
+endpoints.delete('/produto/:id', async (req, resp) => {
     try{
         let id = req.params.id;
-        let LinhasAfetadas = await db.deletarEstoque(id);
+        let LinhasAfetadas = await db.deletarProduto(id);
         if(LinhasAfetadas >= 1){
             resp.send();
         }
