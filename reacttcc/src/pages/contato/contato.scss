@@ -56,6 +56,9 @@ body{
     }
     
     .imagem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 300px;
         height: 190px;
         background-color: #FFDACF;
@@ -63,14 +66,20 @@ body{
         border-radius: 10px;
     }
 
-    .mensagem input{
+    .imagem p{
+        font: 600 14px 'Arial';
+    }
+
+    .mensagem textarea{
         width: 860px;
-        height: 200px;
+        height: 100px;
         border-radius: 10px;
         padding: 10px 25px;
         background-color: #FFDACF;
         border: none;
+        font: 500 14px 'Arial';
     }
+    
 
     .politica{
         display: flex;
