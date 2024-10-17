@@ -35,11 +35,13 @@ body{
         justify-content: center;
         align-items: center;
         flex-direction: row;
+        gap:10px;
     }
 
     .endereco input{
         width: 600px;
         padding: 10px 25px;
+        border-radius: 10px;
         
     }
 
@@ -49,11 +51,32 @@ body{
         justify-content: center;
         align-items: center;
         flex-direction: row;
+        gap:12px;
+    }
+
+    .maps{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row ;
+        gap: 10px;
+    }
+
+    .maps input{
+        width: 580px;
+    }
+
+    .baixo{
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+        flex-direction: row;
+        gap: 60px;
     }
 
     .inputs{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
         gap: 15px;
         flex-direction: column;
@@ -62,5 +85,15 @@ body{
     input{
         background-color: #ffcdbe;
         border: none;
+        padding: 10px 25px;
+        border-radius: 10px;
+    }
+
+    button{
+        border: none;
+        padding: 10px 25px;
+        border-radius: 10px;
+        background-color: #FFcdbe;
+        cursor: pointer;
     }
 }

@@ -1,6 +1,7 @@
 import './contato.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
+import { useState } from 'react';
 
 function Contato(){
 
@@ -91,4 +92,4 @@ function Contato(){
   );
 }
 
-export default Contato ;
+export default Contato;

@@ -20,7 +20,7 @@ function AddUnidade() {
 
         <div className="inputs">
             <div className="endereco">
-              <img src="./images/localizacao.png" alt="" width={30} /><input type="text" placeholder="Insira o endereço do estabelecimento" />
+              <img src="./images/localizacao.png" alt="" width={20} /><input type="text" placeholder="Insira o endereço do estabelecimento" />
             </div>
 
             <div className="funcionamento">
@@ -30,7 +30,7 @@ function AddUnidade() {
 
         <div className="baixo">
           <div className="maps">
-            <img src="./images/maps.png" alt="" /><input type="text" />
+            <img src="./images/maps.png" alt="" width={20} /><input type="text" />
           </div>
           
           <button>Adicionar</button>
