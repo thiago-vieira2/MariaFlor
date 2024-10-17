@@ -1,6 +1,7 @@
 import './contato.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
+import { useState } from 'react';
 
 function Contato(){
 
@@ -17,7 +18,15 @@ function Contato(){
     link.click();
     document.body.removeChild(link);
   }
-  
+
+  const [nome,setNome] = useState('')
+  const [email,setEmail] = useState('')
+  const [telefone,setTelefone] = useState('')
+  const [cep,setCep] = useState('')
+  const [descricao,setDescricao] = useState('')
+
+  const [politica,setPolitica] = useState(false)
+
     return (
     <div className="pagina-contato">
       <header className="cabecalho">
@@ -31,9 +40,9 @@ function Contato(){
       <div className='interativo'>
         <div className='cima'>
           <div className='campos'>
-            <input placeholder='Nome' type="text" />
+            <input placeholder='Nome' type="text" value={nome} onChange={e => setNome(e.target.value)}/>
             <input placeholder='E-Mail' type="text" />
-            <input placeholder='Tel. ex.: (XX) X XXXX-XXXX' type="text" />
+            <input placeholder='Tel. ex.: _ _' type="text" />
             <input placeholder='CEP' type="text" />
           </div>
 
@@ -42,13 +51,13 @@ function Contato(){
           </div>
         </div>
         <div className='mensagem'>
-          <input placeholder='Insira aqui sua mensagem' type="text"/>
+          <textarea placeholder='Insira aqui sua mensagem'  ></textarea>
         </div>
         <div className='politica'>
           <div className='escrita'>
              <p>Declaro que li e estou de acordo com a </p> <a href="" onClick={handleDownload}> Política de Privacidade </a> <p>da Maria Flor.</p>
           </div>
-          <input type="checkbox" />
+          <input type="checkbox" checked={politica} onChange={e => setPolitica(e.target.checked)}/>
           </div>
 
         <button>Enviar</button>

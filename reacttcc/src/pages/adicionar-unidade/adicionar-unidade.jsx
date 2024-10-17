@@ -11,6 +11,7 @@ function AddUnidade() {
       <div className="barra">
         <h1>Adicionar Unidades Maria Flor</h1>
       </div>
+
       <div className="adicionar" >
         <div className="add-image" >
 
@@ -19,17 +20,17 @@ function AddUnidade() {
 
         <div className="inputs">
             <div className="endereco">
-              <img src="" alt="" /><input type="text" placeholder="Insira o endereço do estabelecimento" />
+              <img src="./images/localizacao.png" alt="" width={30} /><input type="text" placeholder="Insira o endereço do estabelecimento" />
             </div>
 
             <div className="funcionamento">
-              <img src="" alt="" /> <p>Horário de Funcionamento: </p><input type="time"/><p>ás</p><input type="time" />
+              <img src="./images/relogio.png" alt="" width={17} /> <p>Horário de Funcionamento: </p><input type="time"/><p>ás</p><input type="time" />
             </div>
         </div>
 
         <div className="baixo">
-          <div className="loc">
-            <img src="" alt="" /><input type="text" />
+          <div className="maps">
+            <img src="./images/maps.png" alt="" /><input type="text" />
           </div>
           
           <button>Adicionar</button>

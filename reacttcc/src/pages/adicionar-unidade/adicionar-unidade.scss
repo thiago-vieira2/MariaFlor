@@ -8,6 +8,17 @@ body{
     flex-direction: column;
     background-color: #fff;
     
+    .adicionar{
+        display: flex;
+        width: 1200px;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFDACF;
+        gap: 30px;
+        margin: 30px;
+        padding: 30px;
+    }
+
     .barra{
         display: flex;
         justify-content: center;
@@ -18,12 +29,6 @@ body{
         background-color: #FFDACF;
     }
 
-    .adicionar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-    }
 
     .endereco{
         display: flex;
@@ -32,10 +37,30 @@ body{
         flex-direction: row;
     }
 
+    .endereco input{
+        width: 600px;
+        padding: 10px 25px;
+        
+    }
+
+
     .funcionamento{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
+    }
+
+    .inputs{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    input{
+        background-color: #ffcdbe;
+        border: none;
     }
 }

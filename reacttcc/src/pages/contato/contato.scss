@@ -63,13 +63,14 @@ body{
         border-radius: 10px;
     }
 
-    .mensagem input{
+    .mensagem textarea{
         width: 860px;
-        height: 200px;
+        height: 100px;
         border-radius: 10px;
-        padding: 10px 25px;
+        padding: 15px 25px;
         background-color: #FFDACF;
         border: none;
+        font: 500 14px 'Arial';
     }
 
     .politica{
@@ -97,5 +98,19 @@ body{
         background-color: #FFDACF;
         cursor: pointer;
     }
+
+    button:hover{
+        background-color: #ffccbc ;
+        
+    }
+
+    input:hover{
+        background-color: #ffccbc ;
+        cursor: pointer;
+    }
     
+    textarea:hover{
+        background-color: #ffccbc ;
+        cursor: pointer;
+    }
 }
