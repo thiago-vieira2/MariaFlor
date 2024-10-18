@@ -1,4 +1,4 @@
-import * as db from '../repository/protudoRepository.js'
+import * as db from '../repository/produtoRepository'
 
 import { Router } from "express"
 const endpoints = Router();
