@@ -61,9 +61,9 @@ function Contato(){
         <div className='cima'>
           <div className='campos'>
             <input placeholder='Nome' type="text" value={nome} onChange={e => setNome(e.target.value)}/>
-            <input placeholder='E-Mail' type="text" />
-            <input placeholder='Tel. ex.: (XX) X XXXX-XXXX' type="text" />
-            <input placeholder='CEP' type="text" />
+            <input placeholder='E-Mail' type="text" value={email} onChange={e => setEmail(e.target.value)}/>
+            <input placeholder='Tel. ex.: (XX) X XXXX-XXXX' type="text" value={telefone} onChange={e => setTelefone(e.target.value)}/>
+            <input placeholder='CEP' type="text" value={cep} onChange={e => setCep(e.target.value)}/>
           </div>
 
           <div className='imagem' {...dragEvents}>
@@ -73,7 +73,7 @@ function Contato(){
           </div>
         </div>
         <div className='mensagem'>
-          <input placeholder='Insira aqui sua mensagem' type="text"/>
+          <textarea placeholder='Insira aqui sua mensagem' type="text" value={descricao} onChange={e => setDescricao(e.target.value)}/>
         </div>
         <div className='politica'>
           <div className='escrita'>
@@ -85,9 +85,8 @@ function Contato(){
         <button>Enviar</button>
       </div>
 
-      <footer className='rodape'>
+      
         <Rodape/>
-      </footer>
     </div>  
   );
 }

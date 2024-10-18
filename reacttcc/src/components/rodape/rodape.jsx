@@ -4,7 +4,7 @@ function Rodape() {
   return (
     <div className="rodape">
       <footer className="principal">
-        <img className="logo" src="./images/mariaflor_logo.png" alt="" width={140} />
+        <img className="logo" src="./images/mariaflor_logo.png" alt="" width={110} />
         <div className='meio'>
           <nav>
             <a href="">Sobre Nós</a>

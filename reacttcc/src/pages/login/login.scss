@@ -1,26 +1,26 @@
 body{
-    background: linear-gradient(to bottom, #FFD7DF, #FFDACF) fixed;
-}
-.login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
-    position: static;
-    width: 100%;
-    padding: 50px;
     
-
-    .logos{
+    .login{
+        background: linear-gradient(to bottom, #FFD7DF, #FFDACF) fixed;
         display: flex;
-        gap: 20px;
-        justify-content: center;
         flex-direction: column;
-        align-items: center;
-    }
-
-    .interativo{
-        display: flex;
+        justify-content: center;
+        align-items: center;    
+        position: static;
+        width: 100%;
+        padding: 50px;
+        
+        
+        .logos{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .interativo{
+            display: flex;
         justify-content: center;
         align-items: center;
         width: 600px;
@@ -31,15 +31,15 @@ body{
         border-radius: 40px;
         padding: 80px 20px;
     }
-
+    
     .interativo h1{
         font: 500 24px 'k2d';
     }
-
+    
     .inputs label{
         font: 500 16px 'Arial';
     }
-
+    
     .inputs{
         display: flex;
         justify-content:center ;
@@ -48,7 +48,7 @@ body{
         gap: 70px;
         margin: 70px;
     }
-
+    
     input{
         display: flex;
         width: 460px;
@@ -70,10 +70,11 @@ body{
         cursor: pointer;
         margin-bottom: 30px;
     }
-
+    
     a{
         font: 400 13px '';
         text-decoration: none;
         color: #5F5F5F;
     }
+}
 }
