@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './global.scss'
+
 import Rodape from './components/rodape/rodape.jsx';
 import Cabecalho from './components/cabecalho/cabecalho.jsx';
 import CardProduto from './components/card-produto/cardProduto.jsx';
@@ -7,6 +8,7 @@ import Inicio from "./pages/inicio/inicio.jsx";
 import Contato from "./pages/contato/contato.jsx";
 import Login from "./pages/login/login.jsx";
 import AddUnidade from "./pages/adicionar-unidade/adicionar-unidade.jsx";
+import Unidades from "./pages/unidades/unidades.jsx";
 
 
 export default function Navegacao(){
@@ -22,6 +24,7 @@ export default function Navegacao(){
               <Route path='/contato' element={<Contato/>} />
               <Route path='/login' element={<Login  />} />
               <Route path='/addunidade' element={<AddUnidade  />} />
+              <Route path='/unidades' element={<Unidades/>} />
          </Routes>
       </BrowserRouter>
 

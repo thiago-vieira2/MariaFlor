@@ -7,16 +7,32 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: #fff;
+
+    .resto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 40px;
+    }
     
+    .interativo{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
     .adicionar{
         display: flex;
         width: 1200px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         background-color: #FFDACF;
         gap: 30px;
         margin: 30px;
         padding: 30px;
+        border-radius: 20px;
     }
 
     .barra{
@@ -87,6 +103,7 @@ body{
         border: none;
         padding: 10px 25px;
         border-radius: 10px;
+
     }
 
     button{
@@ -94,6 +111,29 @@ body{
         padding: 10px 25px;
         border-radius: 10px;
         background-color: #FFcdbe;
+        cursor: pointer;
+    }
+
+    .imagem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        background-color: #FFcdbe;
+        border-radius: 20px;
+        gap: 10px;
+        flex-direction: column;
+        font: 500 14px 'Arial';
+    }
+
+    button:hover{
+        background-color: #ffc8b7 ;
+        
+    }
+
+    input:hover{
+        background-color: #ffc8b7 ;
         cursor: pointer;
     }
 }
