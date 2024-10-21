@@ -28,7 +28,7 @@ export async function buscarUnidade() {
 
 }
 
-export async function alterarEstoque(estoque, idEstoque) {
+export async function alterarUnidade(unidade, idunidade) {
 const comando = `
 
 update tb_unidade
@@ -38,7 +38,7 @@ hr_funcionamento = ?,
 where unidade = ?;
 
 `  
-let resposta = await con.query(comando, [unidade.endereco, unidade.hr_funcionamento, unidade.url_maps, idEstoque])
+let resposta = await con.query(comando, [unidade.endereco, unidade.hr_funcionamento, unidade.url_maps, idunidade])
 let info = resposta[0]
 
 return info.affectedRows
