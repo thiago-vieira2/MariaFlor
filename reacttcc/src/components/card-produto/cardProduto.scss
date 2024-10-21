@@ -1,0 +1,32 @@
+.card {
+    position: relative;
+    background-color: #f8d6d0;
+    border-radius: 30px;
+    padding-bottom: 80px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    .card-imagem img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    .card-container {
+        margin-top: 10px;
+    }
+    
+    .card-numero {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+        color: #858585;
+    }
+  
+    .card-titulo {
+    font: 700 25px "K2D";
+    color: #50301e;
+    margin-top: 10px;
+}
+}
