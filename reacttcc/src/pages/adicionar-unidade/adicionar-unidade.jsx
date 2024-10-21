@@ -30,7 +30,21 @@ function AddUnidade() {
   const [abre,setAbre] = useState('')
   const [fecha,setFecha] = useState('')
   const [url,setUrl] = useState('')
+  const [imagem, setImagem] = useState(null)
   
+  function alterarImagem(e) {
+    const file = e.target.files[0];
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setImagem(reader.result);
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
+
   return (
     <div className="add-uni">
       <header className="cabecalho">
@@ -44,8 +58,8 @@ function AddUnidade() {
 
         <div className="adicionar" >
         <div className='imagem' {...dragEvents}> 
-            <img src="./images/foto.png" alt="" width={120} />
-            <p>Arraste a imagem até aqui</p>
+            <input type="file" placeholder='Procurar imagem no dispositivo' accept='image/*' onChange={alterarImagem}/>
+            <i class='fa-solid fa-trash botao' onClick={() => setImagem(null)} />
         </div>
 
           <div className="interativo">

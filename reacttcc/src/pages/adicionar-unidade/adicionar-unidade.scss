@@ -111,17 +111,15 @@
         cursor: pointer;
     }
 
-    .imagem{
+    .imagem input{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 200px;
-        background-color: #FFcdbe;
-        border-radius: 20px;
-        gap: 10px;
         flex-direction: column;
-        font: 500 14px 'K2D';
+    }
+
+    .imagem input button{
+        border: none;
     }
 
     button:hover{

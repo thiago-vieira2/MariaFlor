@@ -3,12 +3,12 @@ import './cardProduto.scss';
 function CardProduto() {
   return (
     <div className="card">
-      <span className="card__number">#62</span>
-      <div className="card__image">
+      <span className="card-numero">#62</span>
+      <div className="card-imagem">
         <img src="./images/delicia_chocolate.png" alt="Delicia de Chocolate" />
       </div>
-      <div className="card__content">
-        <h3 className="card__title">Delicia de Chocolate</h3>
+      <div className="card-container">
+        <h3 className="card-titulo">Delicia de Chocolate</h3>
       </div>
     </div>
   );

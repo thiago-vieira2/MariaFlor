@@ -19,15 +19,16 @@ function Inicio() {
 
       <div className='cards'>
         <div className='add-card'>
-          <img src="./images/add.png" alt="" />
-          <h2>Adicionar Produto</h2>
+          <a href=""> <img src="./images/add.png" alt="" width={90}/> <h2>Adicionar Produto</h2></a>
         </div>
         <CardProduto/>
+        <CardProduto/>
+        <CardProduto/>
       </div>
-    </div>
 
-      <Rodape/>
-    </div>
+      </div>
+        <Rodape/>
+      </div>
   );
 }
 
