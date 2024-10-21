@@ -8,6 +8,7 @@ export default function adicionarRotas(servidor){
    servidor.use(clienteController)
    servidor.use(estoqueController)
    servidor.use(produtoController)
+   servidor.use(unidadeController)
  
  
 }
