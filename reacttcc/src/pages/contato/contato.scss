@@ -50,17 +50,6 @@
         background-color: #FFDACF;
         border: none;
     }
-    
-    .imagem{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
-        height: 190px;
-        background-color: #FFDACF;
-        border: 2px dashed #50301e;
-        border-radius: 10px;
-    }
 
     .mensagem textarea{
         width: 860px;
@@ -99,6 +88,31 @@
         cursor: pointer;
     }
 
+    #picture__input {
+        display: none;
+      }
+      
+      .picture {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 190px;
+            background-color: #FFDACF;
+            border: 2px dashed #50301e;
+            border-radius: 10px;
+            cursor: pointer;
+      }
+      
+      .picture:hover {
+        color: #50301e;
+        background: #ffccbc;
+      }
+      
+      .picture__img {
+        max-width: 70%;
+      }      
+
     button:hover{
         background-color: #ffccbc ;
         
@@ -113,4 +127,5 @@
         background-color: #ffccbc ;
         cursor: pointer;
     }
+    
 }
