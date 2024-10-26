@@ -1,0 +1,171 @@
+.card-encomenda{
+    width: 565px;
+    height: 310px;
+    margin: 30px 5px;
+    
+    header{
+        width: 565px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        position: absolute;
+        background-color: #FFB49D;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .status{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .status p{
+        font: 600 20px 'K2D';
+        color: #FFEA00;
+    }
+
+    .bolinha{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #FFEA00;
+    }
+
+    .id{
+        font: 500 25px 'K2D';
+        color: #888888;
+    }
+
+    .resto{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 100%;
+        width: 565px;
+        background-color: #FFDACF;
+        border-radius: 30px;
+    }
+
+    .conteudo-encomenda{
+        margin-top: 70px;
+        display: flex;
+        flex-direction: row;
+        background-color: #FFDACF;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .informacoes{
+        background-color: #FFC5B4;
+        width: 250px;
+        height: 200px;
+        border-radius:10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 20px;
+        font-size: 14px;
+        flex-direction: column;
+    }
+
+    .descricao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .campo{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        font: 600 14px 'K2D';
+        gap: 3px;
+    }
+
+    .mensagem{
+        width: 250px;
+        height: 100px;
+        background-color: #FFC5B4;
+        border-radius: 10px;
+        border: none;
+
+    }
+
+    .baixo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        
+    }
+
+    .preco{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .valor{
+        width: 100px;
+        height: 30px;
+        background-color: #FFC5B4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font: 600 20px 'K2D';
+        color: #00A413;
+        border-radius: 10px;
+        
+    }
+
+    .botoes{
+        display: flex;
+        gap:5px;
+        flex-direction: column;
+    }
+
+    .botoes button{
+        width: 75px;
+        border: none;
+        border-radius: 5px;
+        padding: 4px;
+        font: 500 13px 'K2D';
+        cursor: pointer;
+    }
+
+    .concluir{
+        background-color: #C0D391;
+        color: #2DC200;
+    }
+
+    .concluir:hover{
+        background-color: #b1c57e;
+        color: #2DC200;
+    }
+
+    .cancelar{
+        background-color: #ff9992;
+        color: #A40003;
+    }
+
+    .cancelar:hover{
+        background-color: #fa8d85;
+        color: #A40003;
+    }
+
+}

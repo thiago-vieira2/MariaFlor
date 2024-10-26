@@ -8,6 +8,7 @@ function Cabecalho() {
         <nav>
           <a href="./">Inicio</a>
           <a href="">Produtos</a>
+          <a href="./encomendas">Encomendas</a>
           <a href="/unidades">Unidades</a>
           <a href="./contato">Contato</a>
           <a href="">Estoque</a>
