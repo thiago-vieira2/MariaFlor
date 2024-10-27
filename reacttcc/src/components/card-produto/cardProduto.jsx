@@ -2,7 +2,7 @@ import './cardProduto.scss';
 
 function CardProduto() {
   return (
-    <div className="card">
+    <div className="card-produto">
       <span className="card-numero">#62</span>
       <div className="card-imagem">
         <img src="./images/delicia_chocolate.png" alt="Delicia de Chocolate" />
