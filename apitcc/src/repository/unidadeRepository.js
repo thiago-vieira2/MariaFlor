@@ -29,19 +29,17 @@ export async function buscarUnidade() {
 }
 
 export async function alterarUnidade(unidade, idunidade) {
-const comando = `
+    const comando = `
+        update tb_unidade
+        set endereco = ?, 
+        hr_funcionamento = ?,
+        url_maps = ?
+        where unidade = ?;
+    `  
+    let resposta = await con.query(comando, [unidade.endereco, unidade.hr_funcionamento, unidade.url_maps, idunidade])
+    let info = resposta[0]
 
-update tb_unidade
-set endereco = ?, 
-hr_funcionamento = ?,
- url_maps = ?
-where unidade = ?;
-
-`  
-let resposta = await con.query(comando, [unidade.endereco, unidade.hr_funcionamento, unidade.url_maps, idunidade])
-let info = resposta[0]
-
-return info.affectedRows
+    return info.affectedRows
 }
 
 export async function deletarUnidade(id) {

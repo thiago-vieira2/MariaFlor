@@ -35,10 +35,10 @@ endpoints.get('/cliente', async (req, resp) =>{
 
 endpoints.put('/cliente/:id', async (req, resp)=> {
     try{
-        let id = req.params.id;
+        let idCliente = req.params.id;
         let cliente = req.body;
 
-        let LinhasAfetadas = await db.inserirCliente(id, cliente);
+        let LinhasAfetadas = await db.alterarCliente(cliente, idCliente);
         if (LinhasAfetadas >= 1){
             resp.send();
         }

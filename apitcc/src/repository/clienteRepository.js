@@ -18,7 +18,7 @@ export async function buscarCliente(){
     nome        nome,
     email       email,
     telefone    telefone,
-    cpf 
+    cpf         cpf    
     from tb_cliente;
 
     `
@@ -29,16 +29,16 @@ export async function buscarCliente(){
     return resposta
 }
 
-export async function alterarCliente(){
+export async function alterarCliente(cliente, idCliente){
     const comando = `
     update tb_cliente
     set nome = ?,
     email = ?, 
     telefone = ?,
-    cpf = ?,
+    cpf = ?
     where id_cliente = ?;
     `
-    let resposta = await con.query(comando, [estoque.nome, estoque.tipoAlimento, idEstoque])
+    let resposta = await con.query(comando, [cliente.nome, cliente.email, cliente.telefone, cliente.cpf, idCliente])
     let info = resposta[0]
 
     return info.affectedRows
