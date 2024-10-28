@@ -1,0 +1,51 @@
+.pagina-produto{
+    width: 100%;
+    background-color: #FFDACF;
+    margin:30px;
+    padding-bottom: 50px;
+    flex-direction: row;
+    display: flex;
+
+    header{
+        padding: 10px 30px;
+    }
+
+    header h1{
+        font: 500 40px 'K2D';
+        color: #888888;
+    }
+
+    .conteudo{
+        flex-direction: row;
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .conteudo img{
+        width: 30%;
+    }
+
+    .resto{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .resto h1{
+        font: 700 40px 'K2D';
+        color: #50301e;
+    }
+
+    .preco{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: end;
+    }
+
+}

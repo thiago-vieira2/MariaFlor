@@ -1,16 +1,20 @@
+import PaginaProduto from '../pagina-produto/paginaProduto';
 import './cardProduto.scss';
 
-function CardProduto() {
+
+function CardProduto({id,titulo,descricao,img,abrir}) {
+  
+
   return (
-    <a href="" className="card-produto">
-      <span className="card-numero">#62</span>
+    <div onClick={()=>abrir(id, titulo, descricao, img)} href="" className="card-produto">
+      <span className="card-numero">#{id}</span>
       <div className="card-imagem">
-        <img src="./images/delicia_chocolate.png" alt="Delicia de Chocolate" />
+        <img src= {img}/>
       </div>
       <div className="card-container">
-        <h3 className="card-titulo">Delicia de Chocolate</h3>
+        <h3 className="card-titulo"> {titulo} </h3>
       </div>
-    </a>
+    </div>
   );
 }
 

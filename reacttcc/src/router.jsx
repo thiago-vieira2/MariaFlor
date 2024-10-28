@@ -16,7 +16,7 @@ import Doces from "./pages/doces/doces.jsx";
 import AddProduto from "./pages/adicionar-produto/adicionar-produto.jsx";
 import Produtos from "./pages/produtos/produtos.jsx";
 import AddEncomenda from "./pages/adicionar-encomenda/adicionar-encomenda.jsx";
-
+import PaginaProduto from "./components/pagina-produto/paginaProduto.jsx";
 
 export default function Navegacao(){
 
@@ -28,6 +28,7 @@ export default function Navegacao(){
               <Route path='/cabecalho' element={<Cabecalho />} />
               <Route path='/cardProduto' element={<CardProduto/>} />
               <Route path='/cardEncomenda' element={<CardEncomenda/>} />
+              <Route path='/paginaProduto' element={<PaginaProduto/>} />
               <Route path='/' element={<Inicio/>} />
               <Route path='/contato' element={<Contato/>} />
               <Route path='/login' element={<Login  />} />
