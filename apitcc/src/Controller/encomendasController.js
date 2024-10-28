@@ -32,10 +32,10 @@ endpoints.get('/encomendas', async (req, resp) =>{
 
 endpoints.put('/encomendas/:id', async (req, resp)=> {
     try{
-        let id = req.params.id;
+        let idEncomendas = req.params.id;
         let encomendas = req.body;
 
-        let LinhasAfetadas = await db.alterarEncomendas(id, encomendas);
+        let LinhasAfetadas = await db.alterarEncomendas(encomendas, idEncomendas);
         if (LinhasAfetadas >= 1){
             resp.send();
         }
@@ -69,34 +69,6 @@ endpoints.delete('/encomendas/:id', async (req, resp) => {
         })
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
