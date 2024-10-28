@@ -44,13 +44,6 @@ function Contato() {
     };
   }, []);
 
-  const dragEvents = {
-    onDragEnter: (e) => { e.preventDefault(); console.log('onDragEnter'); },
-    onDragLeave: (e) => { e.preventDefault(); console.log('onDragLeave'); },
-    onDragOver: (e) => { e.preventDefault(); console.log('onDragOver'); },
-    onDrop: (e) => { e.preventDefault(); console.log('onDrop'); },
-  };
-
   const handleDownload = () => {
     const pdfUrl = './documents/Política de Privacidade Front Company.pdf';
     const link = document.createElement('a');
@@ -61,13 +54,22 @@ function Contato() {
     document.body.removeChild(link);
   };
 
+  const VerificacaoCep = () =>{
+    if(cep.length == 8){
+      alert('CEP Valido!');
+    }
+    else{
+      alert('CEP Inválido!');
+    }
+  }
+
   return (
     <div className="pagina-contato">
       <header className="cabecalho">
         <Cabecalho />
       </header>
 
-      <img className='cappuccino' src="./images/cappuccino.jpg" alt="" />
+      <img className='contatobanner' src="./images/contatobanner.png" alt="" />
 
       <h1>Deixe sua mensagem</h1>
 
@@ -75,12 +77,12 @@ function Contato() {
         <div className='cima'>
           <div className='campos'>
             <input placeholder='Nome' type="text" value={nome} onChange={e => setNome(e.target.value)} />
-            <input placeholder='E-Mail' type="text" value={email} onChange={e => setEmail(e.target.value)} />
-            <input placeholder='Tel. ex.: (XX) X XXXX-XXXX' type="text" value={telefone} onChange={e => setTelefone(e.target.value)} />
-            <input placeholder='CEP' type="text" value={cep} onChange={e => setCep(e.target.value)} />
+            <input placeholder='E-Mail' type="email" value={email} onChange={e => setEmail(e.target.value)} />
+            <input placeholder='Tel. ex.: (__) _ ____-____' type="number" value={telefone} onChange={e => setTelefone(e.target.value)} />
+            <input placeholder='CEP: _____-___' type="number" value={cep} onChange={e => setCep(e.target.value)} />
           </div>
 
-          <div className='imagem' {...dragEvents}>
+          <div className='imagem'>
             <label className="picture" htmlFor="picture__input" tabIndex="0">
               <span className="picture__image" ref={pictureImageRef}></span>
             </label>

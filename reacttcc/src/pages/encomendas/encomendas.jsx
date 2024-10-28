@@ -14,11 +14,11 @@ function Encomendas() {
         
     <div className='conteudo'>
         
-        <a className='add' href=""> <img src="./images/add.png" alt="" width={30}/> Adicionar nova encomenda <img src="./images/encomenda.png" alt="" width={30}/></a>
+        <a className='add' href="/addencomenda"> <img src="./images/add.png" alt="" width={30}/> Adicionar nova encomenda <img src="./images/encomenda.png" alt="" width={30}/></a>
         
         <div className='faixa'>
           <h2>Encomendas</h2>
-          <select name="time">
+          <select name="status">
             <option value="todos">Todos</option>
             <option value="concluidos">Concluídos</option>
             <option value="pendentes">Pendentes</option>

@@ -1,14 +1,16 @@
-import './adicionar-unidade.scss';
+import './adicionar-produto.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import { useState, useEffect, useRef } from 'react';
 
-function AddUnidade() {
+function AddProduto() {
 
-  const [endereco,setEndereco] = useState('')
-  const [abre,setAbre] = useState('')
-  const [fecha,setFecha] = useState('')
-  const [url,setUrl] = useState('')
+  const [titulo,setTitulo] = useState('')
+  const [descricao,setDescricao] = useState('')
+  const [zeroacucar,setZeroacucar] = useState(false)
+  const [diet,setDiet] = useState(false)
+  
+  const [categoria,setCategoria] = useState('')
   
   const inputFileRef = useRef(null);
   const pictureImageRef = useRef(null);
@@ -45,14 +47,14 @@ function AddUnidade() {
 
 
   return (
-    <div className="add-uni">
+    <div className="add-prod">
       <header className="cabecalho">
         <Cabecalho/>
       </header>
 
-      <div className='resto'>
+      <div className='conteudo'>
         <div className="barra">
-          <h1>Adicionar Unidades Maria Flor</h1>
+          <h1>Adicionar Produtos</h1>
         </div>
 
         <div className="adicionar" >
@@ -64,25 +66,34 @@ function AddUnidade() {
           </div>
 
           <div className="interativo">
+            <div className="inputs">
+              <input className='titulo-produto' type="text" placeholder="Título do Produto" value={titulo} onChange={e => setTitulo(e.target.value)}/>
 
-          <div className="inputs">
-              <div className="endereco">
-                <img src="./images/localizacao.png" alt="" width={20} /><input type="text" placeholder="Insira o endereço do estabelecimento" value={endereco} onChange={e => setEndereco(e.target.value)}/>
+              <select name="categoria" value={categoria} onChange={e => setCategoria(e.target.value)}>
+                <option value="salgado">Salgado</option>
+                <option value="doce">Doce</option>
+              </select>
+
+              <textarea type="text" placeholder='Adicone uma descição ao produto' value={descricao} onChange={e => setDescricao(e.target.value)}/>
+              
+              <div className='baixo'>
+                <div className='inputs-check'>
+                  
+                  <div className='zero'>
+                    <label >É Zero Açucar?</label>
+                    <input type="checkbox" checked={zeroacucar} onChange={e => setZeroacucar(e.target.checked)}/>
+                  </div>
+
+                  <div className='diet'>
+                    <label>É Diet?</label>
+                    <input type="checkbox" checked={diet} onChange={e => setDiet(e.target.checked)}/>
+                  </div>
+                </div>
+                
+                <button>Adicionar</button>
               </div>
-
-              <div className="funcionamento">
-                <img src="./images/relogio.png" alt="" width={17} /> <p>Horário de Funcionamento: </p><input type="time" value={abre} onChange={e => setAbre(e.target.value)}/><p>ás</p><input type="time"  value={fecha} onChange={e => setFecha(e.target.value)}/>
-              </div>
-          </div>
-
-          <div className="baixo">
-            <div className="maps">
-              <img src="./images/maps.png" alt="" width={20} /><input type="url" placeholder='URL da Localização da Empresa no Google Maps'  value={url} onChange={e => setUrl(e.target.value)}/>
             </div>
-            
-            <button>Adicionar</button>
 
-          </div>
           </div>
         </div>
       </div>
@@ -93,4 +104,4 @@ function AddUnidade() {
   );
 }
 
-export default AddUnidade;
+export default AddProduto;

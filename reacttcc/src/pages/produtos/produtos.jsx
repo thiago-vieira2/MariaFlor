@@ -1,25 +1,22 @@
-import './inicio.scss';
+import './produtos.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import CardProduto from '../../components/card-produto/cardProduto.jsx';
 
 
-function Inicio() {
+function Produtos() {
   return (
-    <div className="inicio">
+    <div className="produtos">
       <header className="principal">
         <Cabecalho/>
       </header> 
 
     <div className='conteudo'>
-      <div className='faixa'>
-        <a href="/salgados"> <img src="./images/salgado.png" alt="" /></a>
-        <a href="/doces"> <img src="./images/doce.png" alt="" /></a>
+      <div className='prod'>
+        <h1>Produtos</h1>
       </div>
 
-      <h2 className='slogan'>"Maria Flor, o sabor está no amor"</h2>
-
-      <div className='faixa-dois'>
+      <div className='faixa'>
         <p>Ordernar por</p>
 
         <select name="ordenar">
@@ -48,4 +45,4 @@ function Inicio() {
   );
 }
 
-export default Inicio;
+export default Produtos;

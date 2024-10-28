@@ -11,6 +11,12 @@ import AddUnidade from "./pages/adicionar-unidade/adicionar-unidade.jsx";
 import Unidades from "./pages/unidades/unidades.jsx";
 import CardEncomenda from "./components/card-encomenda/cardEncomenda.jsx";
 import Encomendas from "./pages/encomendas/encomendas.jsx"; 
+import Salgados from "./pages/salgados/salgados.jsx";
+import Doces from "./pages/doces/doces.jsx";
+import AddProduto from "./pages/adicionar-produto/adicionar-produto.jsx";
+import Produtos from "./pages/produtos/produtos.jsx";
+import AddEncomenda from "./pages/adicionar-encomenda/adicionar-encomenda.jsx";
+
 
 export default function Navegacao(){
 
@@ -25,9 +31,14 @@ export default function Navegacao(){
               <Route path='/' element={<Inicio/>} />
               <Route path='/contato' element={<Contato/>} />
               <Route path='/login' element={<Login  />} />
-              <Route path='/addunidade' element={<AddUnidade  />} />
               <Route path='/unidades' element={<Unidades/>} />
+              <Route path='/addunidade' element={<AddUnidade  />} />
               <Route path='/encomendas' element={<Encomendas/>} />
+              <Route path='/addencomenda' element={<AddEncomenda/>} />
+              <Route path='/addproduto' element={<AddProduto/>} />
+              <Route path='/produtos' element={<Produtos/>} />
+              <Route path='/doces' element={<Doces/>} />
+              <Route path='/salgados' element={<Salgados/>} />
 
          </Routes>
       </BrowserRouter>

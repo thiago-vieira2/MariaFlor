@@ -7,10 +7,10 @@ function Cabecalho() {
         <img src="./images/mariaflor_c_logo.png" alt="logo" width={220}/>
         <nav>
           <a href="./">Inicio</a>
-          <a href="">Produtos</a>
-          <a href="./encomendas">Encomendas</a>
+          <a href="/produtos">Produtos</a>
+          <a href="/encomendas">Encomendas</a>
           <a href="/unidades">Unidades</a>
-          <a href="./contato">Contato</a>
+          <a href="/contato">Contato</a>
           <a href="">Estoque</a>
           <a href="">Dashboard</a>
         </nav>

@@ -1,35 +1,29 @@
-import './inicio.scss';
+import './salgados.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import CardProduto from '../../components/card-produto/cardProduto.jsx';
 
 
-function Inicio() {
+function Salgados() {
   return (
-    <div className="inicio">
+    <div className="salgados">
       <header className="principal">
         <Cabecalho/>
       </header> 
 
     <div className='conteudo'>
       <div className='faixa'>
-        <a href="/salgados"> <img src="./images/salgado.png" alt="" /></a>
-        <a href="/doces"> <img src="./images/doce.png" alt="" /></a>
+        <img src="./images/salgadobanner.png" alt="" />
       </div>
-
-      <h2 className='slogan'>"Maria Flor, o sabor está no amor"</h2>
 
       <div className='faixa-dois'>
         <p>Ordernar por</p>
 
         <select name="ordenar">
           <option value="todas">Todas as categorias</option>
-          <option value="doces">Doces</option>
-          <option value="salgados">Salgados</option>
-          <option value="zeroacucar">Zero Açucar</option>
           <option value="diet">Diet</option>
           <option value="ordemalfabetica">Ordem Alfabética A-Z</option>
-          <option value="ordemid">Número do ID</option>
+          <option value="ordemid">ID</option>
         </select>
       </div>
 
@@ -48,4 +42,4 @@ function Inicio() {
   );
 }
 
-export default Inicio;
+export default Salgados;
