@@ -1,5 +1,4 @@
 .produtos {
-
     .prod {
         background-color: #FFDACF;
         padding: 15px 30px;
@@ -15,7 +14,7 @@
         }
 
         @media (max-width: 480px) {
-            width: 90%; 
+            width: 90%;
         }
     }
 
@@ -32,8 +31,8 @@
         border-radius: 30px;
 
         @media (max-width: 768px) {
-            width: 70%; 
-            flex-direction: column; 
+            width: 90%; 
+            padding: 15px;
         }
     }
 
@@ -43,19 +42,28 @@
         align-items: center;
         font: 500 16px 'K2D';
         padding: 5px 10px;
-        text-decoration: none;
         border-radius: 10px;
         background-color: #FFC5B4;
         border: none;
         color: #50301e;
+
+        @media (max-width: 768px) {
+            width: 100%; 
+            max-width: 150px; 
+        }
     }
 
-    .cards{
+    .cards {
+        display: flex;
         justify-content: center;
         align-items: center;
         gap: 30px;
         margin: 50px 40px;
+        flex-wrap: wrap; 
 
+        @media (max-width: 768px) {
+            margin: 30px 20px; 
+        }
     }
 
     .add-card a {
@@ -86,9 +94,5 @@
         align-items: center;
         width: 100%;
         margin: 50px 0;
-
-        @media (max-width: 768px) {
-            margin: 20px 0; 
-        }
     }
 }

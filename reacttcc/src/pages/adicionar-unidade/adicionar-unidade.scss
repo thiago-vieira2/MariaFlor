@@ -1,11 +1,11 @@
-.add-uni{
+.add-uni {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #fff;
 
-    .resto{
+    .resto {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -13,16 +13,16 @@
         margin: 40px;
     }
     
-    .interativo{
+    .interativo {
         display: flex;
         flex-direction: column;
         gap: 40px;
         align-items: flex-start;
     }
 
-    .adicionar{
+    .adicionar {
         display: flex;
-        width: 1200px;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
         background-color: #FFDACF;
@@ -30,9 +30,15 @@
         margin: 30px;
         padding: 30px;
         border-radius: 20px;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            width: auto;
+        }
     }
 
-    .barra{
+    .barra {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,52 +49,57 @@
         color: #50301e;
     }
 
-
-    .endereco{
+    .endereco {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        gap:10px;
+        gap: 10px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
 
-    .endereco input{
-        width: 600px;
+    .endereco input {
+        width: 100%;
+        max-width: 600px;
         padding: 10px 25px;
         border-radius: 10px;
-        
     }
 
-
-    .funcionamento{
+    .funcionamento,
+    .maps {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        gap:12px;
+        gap: 12px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
 
-    .maps{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row ;
-        gap: 10px;
+    .maps input {
+        width: 100%;
+        max-width: 580px;
     }
 
-    .maps input{
-        width: 580px;
-    }
-
-    .baixo{
+    .baixo {
         display: flex;
         justify-content: flex-end;
-        align-items: end;
+        align-items: flex-end;
         flex-direction: row;
         gap: 60px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
-    .inputs{
+    .inputs {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
@@ -96,23 +107,30 @@
         flex-direction: column;
     }
 
-    input{
+    input {
         background-color: #ffcdbe;
         border: none;
         padding: 10px 25px;
         border-radius: 10px;
 
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 
-    button{
+    button {
         border: none;
         padding: 10px 25px;
         border-radius: 10px;
         background-color: #FFcdbe;
         cursor: pointer;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 
-    .imagem input{
+    .imagem input {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,8 +139,8 @@
 
     #picture__input {
         display: none;
-      }
-      
+    }
+
     .picture {
         display: flex;
         justify-content: center;
@@ -133,24 +151,28 @@
         border: 2px dashed #50301e;
         border-radius: 10px;
         cursor: pointer;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+        }
     }
-    
+
     .picture:hover {
-    color: #50301e;
-    background: #ffccbc;
+        color: #50301e;
+        background: #ffccbc;
     }
-    
+
     .picture__img {
-    max-width: 70%;
-    }     
-
-    button:hover{
-        background-color: #ffc8b7 ;
-        
+        max-width: 70%;
     }
 
-    input:hover{
-        background-color: #ffc8b7 ;
+    button:hover {
+        background-color: #ffc8b7;
+    }
+
+    input:hover {
+        background-color: #ffc8b7;
         cursor: pointer;
     }
 }

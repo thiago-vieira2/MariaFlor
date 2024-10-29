@@ -1,14 +1,12 @@
 .salgados {
-
     .faixa {
         width: 100%;
     }
 
     .faixa img {
-        display: flex;
         width: 100%;
-        position: relative;
         margin-bottom: 50px;
+        display: block; // Altera para block para evitar espaços desnecessários
     }
 
     .faixa-dois {
@@ -24,8 +22,13 @@
         border-radius: 30px;
 
         @media (max-width: 768px) {
-            width: 70%; 
-            flex-direction: column; 
+            width: 70%;
+            flex-direction: column;
+            padding: 15px; // Ajuste de padding em telas menores
+        }
+        
+        @media (max-width: 480px) {
+            width: 90%;
         }
     }
 
@@ -35,19 +38,23 @@
         align-items: center;
         font: 500 16px 'K2D';
         padding: 5px 10px;
-        text-decoration: none;
         border-radius: 10px;
         background-color: #FFC5B4;
         border: none;
         color: #50301e;
     }
 
-    .cards{
+    .cards {
+        display: flex; // Adicionado para flexbox
         justify-content: center;
         align-items: center;
         gap: 30px;
         margin: 50px 40px;
+        flex-wrap: wrap; // Permitir quebra de linha em telas menores
 
+        @media (max-width: 768px) {
+            margin: 30px 20px; // Ajuste de margem em telas menores
+        }
     }
 
     .add-card a {
@@ -66,8 +73,8 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
         @media (max-width: 768px) {
-            width: 90%; 
-            height: auto; 
+            width: 90%;
+            height: auto;
         }
     }
 

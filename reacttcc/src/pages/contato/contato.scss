@@ -33,10 +33,10 @@
     }
 
     .campos {
-        align-items: center;
-        justify-content: center;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 10px;
     }
 
@@ -128,7 +128,6 @@
     }
 }
 
-/* Media Queries para Responsividade */
 @media (max-width: 768px) {
     h1 {
         font-size: 24px;
@@ -145,10 +144,7 @@
     button {
         width: 100%;
     }
-
-
 }
-
 
 @media (max-width: 480px) {
     h1 {

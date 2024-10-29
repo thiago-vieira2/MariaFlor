@@ -2,8 +2,8 @@
     .conteudo {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         gap: 30px;
     }
 
@@ -22,33 +22,31 @@
         margin-top: 30px;
 
         @media (max-width: 768px) {
-            width: 90%; 
-            padding: 15px; 
+            width: 90%;
             font-size: 20px;
         }
     }
 
     .faixa {
+        width: 60%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 60%;
         background-color: #FFDACF;
         padding: 25px 45px;
         border-radius: 21px;
 
         @media (max-width: 768px) {
-            width: 90%; 
-            flex-direction: column; 
-            align-items: flex-start;
+            width: 90%;
+            padding: 15px 20px;
         }
     }
 
     .faixa select {
+        width: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 150px;
         font: 500 15px 'K2D';
         padding: 5px 10px;
         border-radius: 10px;
@@ -57,18 +55,15 @@
         color: #50301e;
 
         @media (max-width: 768px) {
-            width: 100%; 
-            max-width: 200px; 
+            width: 100%; // Aumenta a largura em telas menores
+            max-width: 150px; // Limita a largura máxima
         }
     }
 
     .cards-encomendas {
         display: flex;
         gap: 20px;
-
-        @media (max-width: 768px) {
-            flex-wrap: wrap; 
-            justify-content: center; 
-        }
+        flex-wrap: wrap; // Permite que os cards quebrem para a próxima linha em telas menores
+        justify-content: center; // Centraliza os cards
     }
 }
