@@ -1,4 +1,11 @@
 .salgados {
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .faixa {
         width: 100%;
     }
@@ -22,13 +29,11 @@
         border-radius: 30px;
 
         @media (max-width: 768px) {
-            width: 70%;
-            flex-direction: column;
-            padding: 15px; // Ajuste de padding em telas menores
-        }
-        
-        @media (max-width: 480px) {
-            width: 90%;
+            width: 95%;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 15px;
+            border-radius: 15px;
         }
     }
 
@@ -42,18 +47,28 @@
         background-color: #FFC5B4;
         border: none;
         color: #50301e;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 150px;
+        }
     }
 
     .cards {
-        display: flex; // Adicionado para flexbox
-        justify-content: center;
+        display: flex;
         align-items: center;
         gap: 30px;
         margin: 50px 40px;
-        flex-wrap: wrap; // Permitir quebra de linha em telas menores
+        flex-wrap: wrap;
+        width: 1175px;
 
         @media (max-width: 768px) {
-            margin: 30px 20px; // Ajuste de margem em telas menores
+            width: auto;
+            margin: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
         }
     }
 
@@ -73,8 +88,12 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
         @media (max-width: 768px) {
-            width: 90%;
-            height: auto;
+            display: flex;
+            flex-direction: column;
+            height: 150px;
+            width: 271px;
+            gap: 10px;
+            padding: 15px;
         }
     }
 

@@ -11,8 +11,16 @@
         justify-content: center;
         align-items: center;
         margin: 40px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            width: auto;
+            align-items: center;
+            justify-content: center;
+
+        }
     }
-    
+
     .interativo {
         display: flex;
         flex-direction: column;
@@ -42,8 +50,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80%;
-        height: 81px;
+        width: 100%;
         border-radius: 20px;
         background-color: #FFDACF;
         color: #50301e;

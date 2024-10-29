@@ -1,17 +1,22 @@
-.doces{
-
-    .faixa{
-        width: 100%;
-    }
-
-    .faixa img{
+.doces {
+    @media (max-width: 768px) {
         display: flex;
-        width: 100%;
-        position: relative;
-        margin-bottom: 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    .faixa-dois{
+    .faixa {
+        width: 100%;
+    }
+
+    .faixa img {
+        width: 100%;
+        margin-bottom: 50px;
+        display: block; // Altera para block para evitar espaços desnecessários
+    }
+
+    .faixa-dois {
         width: 40%;
         padding: 20px;
         background-color: #FFDACF;
@@ -22,37 +27,57 @@
         gap: 10px;
         font: 400 20px 'K2D';
         border-radius: 30px;
+
+        @media (max-width: 768px) {
+            width: 95%;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 15px;
+            border-radius: 15px;
+        }
     }
 
-    .faixa-dois select{
-        
+    .faixa-dois select {
         display: flex;
         justify-content: center;
         align-items: center;
         font: 500 16px 'K2D';
         padding: 5px 10px;
-        text-decoration: none;
         border-radius: 10px;
         background-color: #FFC5B4;
         border: none;
         color: #50301e;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 150px;
+        }
     }
 
-    .cards{
+    .cards {
         display: flex;
         align-items: center;
         gap: 30px;
         margin: 50px 40px;
         flex-wrap: wrap;
         width: 1175px;
+
+        @media (max-width: 768px) {
+            width: auto;
+            margin: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
     }
 
-    .add-card a{
+    .add-card a {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 361px ;
+        height: 361px;
         width: 271px;
         gap: 30px;
         text-decoration: none;
@@ -62,13 +87,21 @@
         border-radius: 30px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            height: 150px;
+            width: 271px;
+            gap: 10px;
+            padding: 15px;
+        }
     }
 
-    .conteudo{
+    .conteudo {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
- }
+}
