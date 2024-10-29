@@ -1,12 +1,24 @@
+import React, { useState } from 'react';
 import './cabecalho.scss';
 
 function Cabecalho() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="cabecalho">
-      <header className="principal">
+      <header className="principal" id='principal'>
         <img src="./images/mariaflor_c_logo.png" alt="logo" width={220}/>
-        <nav>
-          <a href="./">Inicio</a>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+        <nav className={isMenuOpen ? 'active' : ''}>
+          <a href="/Inicio">Inicio</a>
           <a href="/produtos">Produtos</a>
           <a href="/encomendas">Encomendas</a>
           <a href="/unidades">Unidades</a>
