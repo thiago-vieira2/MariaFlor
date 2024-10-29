@@ -39,12 +39,12 @@
     }
 
     .cards{
-        justify-content: center;
-        align-items: center;
         display: flex;
+        align-items: center;
         gap: 30px;
         margin: 50px 40px;
-
+        flex-wrap: wrap;
+        width: 1175px;
     }
 
     .add-card a{

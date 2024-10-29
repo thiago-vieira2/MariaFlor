@@ -17,6 +17,8 @@ import AddProduto from "./pages/adicionar-produto/adicionar-produto.jsx";
 import Produtos from "./pages/produtos/produtos.jsx";
 import AddEncomenda from "./pages/adicionar-encomenda/adicionar-encomenda.jsx";
 import PaginaProduto from "./components/pagina-produto/paginaProduto.jsx";
+import CardUnidade from "./components/card-unidade/cardUnidade.jsx";
+
 
 export default function Navegacao(){
 
@@ -40,6 +42,7 @@ export default function Navegacao(){
               <Route path='/produtos' element={<Produtos/>} />
               <Route path='/doces' element={<Doces/>} />
               <Route path='/salgados' element={<Salgados/>} />
+              <Route path='/cardUnidade' element={<CardUnidade/>} />
 
          </Routes>
       </BrowserRouter>

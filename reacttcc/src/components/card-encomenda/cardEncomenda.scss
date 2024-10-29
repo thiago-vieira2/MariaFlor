@@ -1,7 +1,7 @@
 .card-encomenda{
     width: 565px;
     height: 310px;
-    margin: 30px 5px;
+    margin: 5px 0;
     
     header{
         width: 565px;
@@ -15,14 +15,14 @@
         border-top-right-radius: 10px;
     }
 
-    .status{
+    .status-class{
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 15px;
     }
 
-    .status p{
+    .status-class p{
         font: 600 20px 'K2D';
         color: #FFEA00;
     }
@@ -60,7 +60,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px;
+        padding: 5px;
     }
 
     .informacoes{
@@ -96,10 +96,13 @@
 
     .mensagem{
         width: 250px;
-        height: 100px;
+        min-height: 100px;
+        height: auto;
         background-color: #FFC5B4;
         border-radius: 10px;
         border: none;
+        font: 500 13px 'K2D';
+        padding: 10px;
 
     }
 

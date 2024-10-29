@@ -52,5 +52,8 @@
     .cards-encomendas{
         display: flex;
         gap: 20px;
+        width: 1150px;
+        flex-wrap: wrap;
+        align-items: center;
     }
 }

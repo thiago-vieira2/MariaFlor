@@ -1,6 +1,9 @@
 import './unidades.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
+import CardUnidade from '../../components/card-unidade/cardUnidade.jsx';
+
+
 
 function Unidades() {
   return (
@@ -17,6 +20,10 @@ function Unidades() {
                 <p>Adicionar nova unidade</p>
                 <img src="./images/empresa.png" alt="" width={30}/>
             </a>
+
+            <div className='cards'>
+              <CardUnidade/>
+            </div>
         </div>
     </div>
 
