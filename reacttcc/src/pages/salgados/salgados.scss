@@ -42,17 +42,12 @@
         color: #50301e;
     }
 
-    .cards {
+    .cards{
         justify-content: center;
         align-items: center;
-        display: flex;
         gap: 30px;
         margin: 50px 40px;
 
-        @media (max-width: 768px) {
-            flex-wrap: wrap; 
-            margin: 20px; 
-        }
     }
 
     .add-card a {

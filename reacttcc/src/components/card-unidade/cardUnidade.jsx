@@ -1,8 +1,8 @@
-import './cardEncomenda.scss';
+import './cardUnidade.scss';
 
-function CardEncomenda() {
+function CardUnidade() {
   return (
-    <div className="card-encomenda">
+    <div className="card-unidade">
       <header> 
         <p className='id'>#1</p> 
         <div className='status'> 
@@ -42,4 +42,4 @@ function CardEncomenda() {
   );
 }
 
-export default CardEncomenda
+export default CardUnidade

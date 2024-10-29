@@ -1,10 +1,9 @@
 .encomendas {
-
     .conteudo {
-        justify-content: center;
-        align-items: center;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 30px;
     }
 
@@ -30,10 +29,10 @@
     }
 
     .faixa {
-        width: 60%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 60%;
         background-color: #FFDACF;
         padding: 25px 45px;
         border-radius: 21px;
@@ -46,13 +45,12 @@
     }
 
     .faixa select {
-        width: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 150px;
         font: 500 15px 'K2D';
         padding: 5px 10px;
-        text-decoration: none;
         border-radius: 10px;
         background-color: #FFC5B4;
         border: none;

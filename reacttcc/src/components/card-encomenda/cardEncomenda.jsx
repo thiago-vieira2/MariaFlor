@@ -1,34 +1,37 @@
 import './cardEncomenda.scss';
 
-function CardEncomenda() {
+function CardEncomenda({id,status,nome,contato,data_entrega,hora_entrega,forma_pagamento,descricao,valor}) {
+
+  
+
   return (
     <div className="card-encomenda">
       <header> 
-        <p className='id'>#1</p> 
-        <div className='status'> 
-          <p>Pendente</p>
+        <p className='id'>#{id}</p> 
+        <div className='status-class'> 
+          <p>{status}</p>
           <div className='bolinha'></div>
         </div>
       </header>
 
       <div className='conteudo-encomenda'>
         <div className='informacoes'>
-          <p><strong>Nome:</strong> Bernardo Ferreira</p>
-          <p><strong>Contato:</strong> (11) 98300-8066</p>
-          <p><strong>Data da Entrega:</strong> 23/10</p>
-          <p><strong>Hora da Entrega:</strong> 15:30</p>
-          <p><strong>Forma de Pagamento:</strong> Crédito</p>
+          <p><strong>Nome:</strong> {nome}</p>
+          <p><strong>Contato:</strong> {contato}</p>
+          <p><strong>Data da Entrega:</strong> {data_entrega}</p>
+          <p><strong>Hora da Entrega:</strong> {hora_entrega}</p>
+          <p><strong>Forma de Pagamento:</strong> {forma_pagamento}</p>
         </div>
 
         <div className='descricao'>
           <div className='campo'>
             <h2>Descrição</h2>
-            <div className='mensagem'></div>
+            <div className='mensagem'>{descricao}</div>
           </div>
 
           <div className='baixo'>
             <div className='preco'>
-              <h2>Valor:</h2> <div className='valor'> R$150,00 </div>
+              <h2>Valor:</h2> <div className='valor'> R${valor} </div>
             </div>
 
             <div className='botoes'>

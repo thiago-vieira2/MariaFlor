@@ -1,10 +1,10 @@
 .pagina-produto{
+    display: flex;
     width: 100%;
     background-color: #FFDACF;
     margin:30px;
     padding-bottom: 50px;
     flex-direction: row;
-    display: flex;
 
     header{
         padding: 10px 30px;
@@ -16,8 +16,8 @@
     }
 
     .conteudo{
-        flex-direction: row;
         display: flex ;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 70px;
@@ -28,17 +28,24 @@
     }
 
     .resto{
-        width: 40%;
         display: flex;
-        flex-direction: column;
-        gap: 40px;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        width: 40%;
+        gap: 40px;
     }
 
     .resto h1{
         font: 700 40px 'K2D';
         color: #50301e;
+    }
+
+    .resto p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
     }
 
     .preco{

@@ -1,15 +1,14 @@
-import PaginaProduto from '../pagina-produto/paginaProduto';
 import './cardProduto.scss';
 
 
-function CardProduto({id,titulo,descricao,img,abrir}) {
+function CardProduto({id,titulo,descricao,img,valor,abrir}) {
   
 
   return (
-    <div onClick={()=>abrir(id, titulo, descricao, img)} href="" className="card-produto">
+    <div onClick={()=>abrir(id, titulo, descricao, img , valor)} href="" className="card-produto">
       <span className="card-numero">#{id}</span>
       <div className="card-imagem">
-        <img src= {img}/>
+        <img src={valor}/>
       </div>
       <div className="card-container">
         <h3 className="card-titulo"> {titulo} </h3>

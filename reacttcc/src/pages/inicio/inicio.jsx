@@ -8,27 +8,82 @@ import { useState } from 'react';
 const produtos = [
   {
     "id": 3,
-    "titulo": "Chocolate",
-    "img": "./images/delicia_chocolate.png"
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
   },
 
   {
-    "id": 1,
-    "titulo": "ninho",
-    "img": "./images/add.png"
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
   },
 
   {
-    "id": 4,
-    "titulo": "prestigio"
-  }
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
+  },
+
+  {
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
+  },
+
+  {
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
+  },
+
+  {
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
+  },
+
+  {
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
+  },
+
+  {
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
+  },
+
+  {
+    "id": 3,
+    "titulo": "Delícia de Chocolate",
+    "descricao": "Conheça a Delícia de Chocolate: um bolo irresistível que combina camadas fofinhas de chocolate com um recheio generoso de brigadeiro. Finalizado com raspas de chocolate, é a sobremesa perfeita para quem busca o sabor ultimate do prazer!",
+    "valor": "./images/delicia_chocolate.png",
+    "img": "124,90"
+  },
 ]
 
 function Inicio() {
   const [produtoSelecionado, setProdutoSelecionado] = useState(null)
 
-  function abrir(id, titulo, descricao, img) {
-    setProdutoSelecionado({id, titulo, descricao, img})
+  function abrir(id, titulo, descricao, valor, img) {
+    setProdutoSelecionado({id, titulo, descricao, valor , img})
   }
 
   return (
@@ -61,9 +116,10 @@ function Inicio() {
 
         {produtoSelecionado && <PaginaProduto
           id={produtoSelecionado.id}
-          titulo={produtoSelecionado.descricao}
-          img={produtoSelecionado.img}
+          titulo={produtoSelecionado.titulo}
           descricao={produtoSelecionado.descricao}
+          img={produtoSelecionado.img}
+          valor={produtoSelecionado.valor}
         />}
 
         <div className='cards'>
@@ -74,9 +130,10 @@ function Inicio() {
           {produtos.map(p => <CardProduto
             id={p.id}
             titulo={p.titulo}
+            descricao={p.descricao}
             img={p.img}
+            valor={p.valor}
             abrir={abrir} />)}
-
         </div>
 
       </div>

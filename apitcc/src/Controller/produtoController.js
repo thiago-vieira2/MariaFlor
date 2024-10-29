@@ -32,10 +32,10 @@ endpoints.get('/produto', async (req, resp) =>{
 
 endpoints.put('/produto/:id', async (req, resp)=> {
     try{
-        let id = req.params.id;
+        let idProduto = req.params.id;
         let produto = req.body;
 
-        let LinhasAfetadas = await db.alterarProduto(id, produto);
+        let LinhasAfetadas = await db.alterarProduto(produto, idProduto);
         if (LinhasAfetadas >= 1){
             resp.send();
         }
@@ -49,6 +49,7 @@ endpoints.put('/produto/:id', async (req, resp)=> {
         })
     }
 })
+
 
 
 endpoints.delete('/produto/:id', async (req, resp) => {
@@ -69,6 +70,5 @@ endpoints.delete('/produto/:id', async (req, resp) => {
         })
     }
 })
-
 
 export default endpoints;
