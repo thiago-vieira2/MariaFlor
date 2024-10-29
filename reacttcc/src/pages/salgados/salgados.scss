@@ -1,17 +1,17 @@
-.salgados{
+.salgados {
 
-    .faixa{
+    .faixa {
         width: 100%;
     }
 
-    .faixa img{
+    .faixa img {
         display: flex;
         width: 100%;
         position: relative;
         margin-bottom: 50px;
     }
 
-    .faixa-dois{
+    .faixa-dois {
         width: 40%;
         padding: 20px;
         background-color: #FFDACF;
@@ -22,10 +22,14 @@
         gap: 10px;
         font: 400 20px 'K2D';
         border-radius: 30px;
+
+        @media (max-width: 768px) {
+            width: 70%; 
+            flex-direction: column; 
+        }
     }
 
-    .faixa-dois select{
-        
+    .faixa-dois select {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -38,21 +42,25 @@
         color: #50301e;
     }
 
-    .cards{
+    .cards {
         justify-content: center;
         align-items: center;
         display: flex;
         gap: 30px;
         margin: 50px 40px;
 
+        @media (max-width: 768px) {
+            flex-wrap: wrap; 
+            margin: 20px; 
+        }
     }
 
-    .add-card a{
+    .add-card a {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 361px ;
+        height: 361px;
         width: 271px;
         gap: 30px;
         text-decoration: none;
@@ -62,13 +70,17 @@
         border-radius: 30px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
+        @media (max-width: 768px) {
+            width: 90%; 
+            height: auto; 
+        }
     }
 
-    .conteudo{
+    .conteudo {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
- }
+}
