@@ -2,25 +2,27 @@ import con from './connection.js'
 
 export async function inserirProduto(produto) {
     const comando = `
-insert into tb_produtos (nm_nomeproduto, bt_categoria, ds_descricao, bt_zeroacucar, bt_diet, vl_preco_kg)
-values (?, ?, ?, ?, ?, ?);
-`
-let info = await con.query(comando[produto.nm_nomeproduto, produto.bt_categoria, produto.ds_descricao, produto.bt_zeroacucar, produto.bt_diet, produto.vl_preco_kg])
+    insert into tb_produtos(nomeproduto, categoria, descricao, zeroAcucar, diet, precoKg)
+	values (?, ?, ?, ?, ?, ?);
+   `
+   let resposta = await con.query(comando, [produto.nomeproduto, produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg]);
+   
+   let info = resposta[0]
+   let id = info.insertId
 
-let respostas = info[0]
-return respostas.inseritId
+   return id
 }
 
 export async function buscarProduto(){
     const comando = `
     
-    select id_produto        select id_produto , 
-    nm_nomeproduto           nm_nomeproduto  ,
-    bt_categoria             bt_categoria ,
-    ds_descricao             ds_descricao       , 
-    bt_zeroacucar              bt_zeroacucar ,
-    bt_diet,                    bt_diet
-    vl_preco_kg                  vl_preco_kg 
+    select id_produto, 
+    nomeproduto           nomeproduto,
+    categoria             categoria,
+    descricao             descricao, 
+    zeroacucar            zeroacucar,
+    diet,                 diet,
+    precoKg               precoKg
     from tb_produtos;
 
 
@@ -33,17 +35,17 @@ export async function buscarProduto(){
 
 export async function alterarProduto(produto, idProduto) {
    const comando = `
-        update tb_produtos
-    set nm_nomeproduto = ?,
-    bt_categoria = ?,
-    ds_descricao = ?,
-    bt_zeroacucar = ?,
-    bt_diet = ?,
-    vl_preco_kg = ?
+    update tb_produtos
+    set nomeproduto = ?,
+        categoria = ?,
+        descricao = ?,
+        zeroacucar = ?,
+        diet = ?,
+        precoKg = ?
     where id_produto = ?;
     ` 
 
-    let resposta = await con.query(comando, [produto.categoria, produto.ingredientes, produto.descricao, produto.zeroAcucar, produto.diet, idProduto])
+    let resposta = await con.query(comando, [produto.nomeproduto,produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg ,idProduto])
     let info = resposta[0]
 
     return info.affectedRows
@@ -52,12 +54,12 @@ export async function alterarProduto(produto, idProduto) {
 
 export async function deletarProduto(id) {
     const comando = `
-        delete from tb_produtos
+      delete from tb_produtos
     where id_produto = ?;
 
     `
     let resposta = await con.query (comando, [id])
-    let info = resposta
+    let info = resposta[0]
 
     return info.affectedRows
 }

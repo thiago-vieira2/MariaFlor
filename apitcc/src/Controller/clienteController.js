@@ -1,5 +1,4 @@
 import * as db from '../repository/clienteRepository.js'
-
 import { Router } from "express"
 const endpoints = Router();
 
@@ -9,7 +8,6 @@ endpoints.post('/cliente/', async (req, resp) =>{
     try{
         let cliente = req.body
         let id = await db.inserirCliente(cliente)
-
         resp.send({
             idCliente: id
         })

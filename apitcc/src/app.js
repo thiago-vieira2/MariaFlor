@@ -5,9 +5,9 @@ import adicionarRotas from './rotas.js'
 
 const servidor = express();
 servidor.use(express.json());
-servidor.use(cors());  
+servidor.use(cors());
 const PORTA = process.env.PORTA;
 
 adicionarRotas(servidor);
 
-servidor.listen(PORTA, () => console.log(`Api subiu na porta ${PORTA}`));
+servidor.listen(PORTA, () => console.log (`Api subiu na porta ${PORTA}`));
