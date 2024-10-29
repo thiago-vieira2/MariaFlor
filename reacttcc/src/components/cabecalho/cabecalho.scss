@@ -1,26 +1,41 @@
-.cabecalho{
+.cabecalho {
     background-color: #FFD8D8;
     width: 100%;
-    .principal{
+
+    .principal {
         display: flex;
-        justify-content: space-around ;
+        justify-content: space-around;
         padding: 20px 30px;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
-    nav{
+    nav {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 50px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 20px;
+        }
     }
             
-    a{
+    a {
         text-decoration: none;
         font: 400 20px 'K2D';
         color: #50301E;
-    }         
-    
-    .botao-adm{
+
+        @media (max-width: 768px) {
+            font-size: 18px; 
+        }
+    }
+
+    .botao-adm {
         display: flex;
         text-decoration: none;
         justify-content: center;
@@ -28,6 +43,9 @@
         flex-direction: row;
         gap: 10px;
         cursor: pointer;
-        
+
+        @media (max-width: 768px) {
+            flex-direction: column; 
+        }
     }
 }

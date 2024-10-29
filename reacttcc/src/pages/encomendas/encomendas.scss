@@ -1,14 +1,13 @@
-.encomendas{
-
-    .conteudo{
-        justify-content: center;
-        align-items: center;
+.encomendas {
+    .conteudo {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 30px;
     }
 
-    .add{
+    .add {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -21,39 +20,55 @@
         text-decoration: none;
         color: #50301e;
         margin-top: 30px;
+
+        @media (max-width: 768px) {
+            width: 90%; 
+            padding: 15px; 
+            font-size: 20px;
+        }
     }
 
-    .faixa{
-        width: 60%;
+    .faixa {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 60%;
         background-color: #FFDACF;
         padding: 25px 45px;
         border-radius: 21px;
-        
+
+        @media (max-width: 768px) {
+            width: 90%; 
+            flex-direction: column; 
+            align-items: flex-start;
+        }
     }
 
-    .faixa select{
-        width: 150px;
+    .faixa select {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 150px;
         font: 500 15px 'K2D';
         padding: 5px 10px;
-        text-decoration: none;
         border-radius: 10px;
         background-color: #FFC5B4;
         border: none;
         color: #50301e;
 
+        @media (max-width: 768px) {
+            width: 100%; 
+            max-width: 200px; 
+        }
     }
 
-    .cards-encomendas{
+    .cards-encomendas {
         display: flex;
         gap: 20px;
-        width: 1150px;
-        flex-wrap: wrap;
-        align-items: center;
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
     }
 }
