@@ -6,6 +6,7 @@
         justify-content: center;
         align-items: center;
         margin: 50px;
+        flex-direction: column;
     }
     
     .adicionar a{
@@ -30,6 +31,7 @@
         margin: 50px 40px;
         flex-wrap: wrap;
         width: 1175px;
+        justify-content: center;
     }
     
 }
