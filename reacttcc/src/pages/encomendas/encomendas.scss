@@ -60,10 +60,18 @@
         }
     }
 
-    .cards-encomendas {
+    .cards-encomendas{
         display: flex;
         gap: 20px;
-        flex-wrap: wrap; // Permite que os cards quebrem para a próxima linha em telas menores
-        justify-content: center; // Centraliza os cards
+        width: 1150px;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            width:375px
+        }
     }
+
 }

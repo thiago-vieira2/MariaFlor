@@ -52,6 +52,15 @@
         align-items: center;
         justify-content: space-between;
         padding: 10px;
+
+        @media (width: 300%) {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            height: auto;
+
+            
+        }
     }
 
     .informacoes{
@@ -68,11 +77,11 @@
         flex-direction: column;
     }
 
-    .informacoes input{
+    .inputs input{
         background-color: #FFDACF;
         border: none;
         border-radius: 3px;
-        width: 100%;
+        width: 300px;
         padding: 5px 5px;
     }
 

@@ -2,13 +2,35 @@ import './adicionar-encomenda.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios'
+
 
 function AddEncomenda() {
 
-  const [endereco,setEndereco] = useState('')
-  const [abre,setAbre] = useState('')
-  const [fecha,setFecha] = useState('')
-  const [url,setUrl] = useState('')
+  async function salvar() {
+    let paramCorpo = {
+      "nome":nome,
+      "contato":contato,
+      "descricao":descricao,
+      "data_entrega":dataEntrega,
+      "forma_pagamento":formaPagamento,
+      "valor":valor,
+    }
+
+    const url = 'http://localhost:5020/encomendas';
+    let resp = await axios.post(url, paramCorpo);
+
+    alert(resp);
+}
+
+  const [nome,setNome] = useState('')
+  const [contato,setContato] = useState('')
+  const [descricao,setDescricao] = useState('')
+  const [dataEntrega,setDataEntrega] = useState('')
+  const [horaEntrega,setHoraEntrega] = useState('')
+  const [formaPagamento, setFormaPagamento] = useState('')
+  const [valor, setValor] = useState('')
+  
 
 
   return (
@@ -26,11 +48,11 @@ function AddEncomenda() {
 
       <div className='conteudo-encomenda'>
         <div className='informacoes'>
-          <p><strong>Nome:</strong> <input type="text"/></p>
-          <p><strong>Contato:</strong> <input type="text"/></p>
-          <p><strong>Data da Entrega:</strong> <input className='data' type="date"/></p>
-          <p><strong>Hora da Entrega:</strong> <input type="time"/></p>
-          <p><strong>Forma de Pagamento:</strong> <input type="text" className='forma-pagamento' placeholder='ex.: Dinheiro'/></p>
+          <div className='inputs'><p><strong>Nome:</strong></p> <input type="text" value={nome} onChange={e => setNome(e.target.value)}/></div>
+          <div className='inputs'><p><strong>Contato:</strong></p> <input type="text" value={contato} onChange={e => setContato(e.target.value)}/></div>
+          <div className='inputs'><p><strong>Data da Entrega:</strong></p> <input className='data' type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)}/></div>
+          <div className='inputs'><p><strong>Hora da Entrega:</strong></p> <input type="time" value={horaEntrega} onChange={e => setHoraEntrega(e.target.value)}/></div>
+          <div className='inputs'><p><strong>Forma de Pagamento:</strong></p> <input type="text" className='forma-pagamento' placeholder='ex.: Dinheiro' value={formaPagamento} onChange={e => setFormaPagamento(e.target.value)}/></div>
         </div>
 
         <div className='descricao'>
@@ -39,9 +61,9 @@ function AddEncomenda() {
             <textarea className='mensagem'></textarea>
           </div>
           <div className='preco'>
-            <h2>Total: R$</h2> <input type="number" className='valor' />
+            <h2>Total: R$</h2> <input type="number" className='valor' value={valor} onChange={e => setValor(e.target.value)}/>
           </div>
-          <button>Adicionar</button>
+          <button onClick={salvar} >Adicionar</button>
         </div>
       </div>
       </div>

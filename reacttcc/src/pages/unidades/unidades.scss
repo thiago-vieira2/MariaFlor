@@ -4,6 +4,7 @@
         justify-content: center;
         align-items: center;
         margin: 50px;
+        flex-direction: column;
 
         @media (max-width: 768px) {
             flex-direction: column;
@@ -24,5 +25,15 @@
         text-decoration: none;
         color: #50301e;
         border-radius: 20px;
+        padding: 0 50px ;
+    }
+
+    .cards{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin: 50px 40px;
+        flex-wrap: wrap;
+        width: 1175px;
     }
 }

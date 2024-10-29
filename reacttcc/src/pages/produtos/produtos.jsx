@@ -97,7 +97,7 @@ function Produtos() {
         <h1>Produtos</h1>
       </div>
 
-      <div className='faixa'>
+      <div className='faixa-prod'>
         <p>Ordernar por</p>
 
         <select name="ordenar">
@@ -119,19 +119,19 @@ function Produtos() {
           valor={produtoSelecionado.valor}
         />}
 
-      <div className='cards'>
-        <div className='add-card'>
-          <a href="/addproduto"> <img src="./images/add.png" alt="" width={90}/> <h2>Adicionar Produto</h2></a>
-        </div>
-        
-        {produtos.map(p => <CardProduto
+        <div className='cards'>
+          <div className='add-card'>
+            <a href="/addproduto"> <img src="./images/add.png" alt="" width={90} /> <h2>Adicionar Produto</h2></a>
+          </div>
+
+          {produtos.map(p => <CardProduto
             id={p.id}
             titulo={p.titulo}
             descricao={p.descricao}
             img={p.img}
             valor={p.valor}
             abrir={abrir} />)}
-      </div>
+        </div>
 
       </div>
         <Rodape/>

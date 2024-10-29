@@ -3,6 +3,13 @@
     height: 310px;
     margin: 5px 0;
     
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: auto;
+    }
+
     header{
         width: 565px;
         display: flex;
@@ -13,6 +20,11 @@
         background-color: #FFB49D;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+
+        @media (max-width: 768px) {
+            width: auto;
+            width: 400px;
+        }
     }
 
     .status-class{
@@ -48,6 +60,12 @@
         width: 565px;
         background-color: #FFDACF;
         border-radius: 30px;
+
+        @media (max-width: 768px) {
+            display: flex;
+            width: 400px;
+            flex-direction: column;
+        }
     }
 
     .conteudo-encomenda{
@@ -75,6 +93,10 @@
         gap: 20px;
         font-size: 14px;
         flex-direction: column;
+
+        @media (max-width: 768px) {
+            height: auto;
+        }
     }
 
     .descricao{
