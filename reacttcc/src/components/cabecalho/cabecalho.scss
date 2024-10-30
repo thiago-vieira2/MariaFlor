@@ -1,59 +1,84 @@
 .cabecalho {
-    .principal {
+  background-color: #ffd8d8; // Mudando a cor de fundo
+
+  .principal {
       display: flex;
-      justify-content: space-between;
+      justify-content:center; // Centraliza o conteúdo
       align-items: center;
-      position: relative;
-  
-  
+      position:relative;
+      padding: 10px 0; // Adiciona um pouco de espaçamento vertical
+      gap: 20px;
+
       .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-  
-        .bar {
-          height: 4px;
-          width: 25px;
-         
-          margin: 3px 0;
-          transition: 0.4s;
-        }
-      }
-  
-      nav {
-        display: flex;
-        gap: 20px;
-  
-        a {
-          text-decoration: none;
-         
-        }
-      }
-  
-      @media (max-width: 768px) {
-        .menu-toggle {
-          display: flex;
-        }
-  
-        nav {
           display: none;
           flex-direction: column;
-          position: absolute;
-          top: 60px; 
-          left: 0;
-          background-color: #ffd8d8;
-          width: 100%;
-          z-index: 1;
-  
-          &.active {
-            display: flex;
+          cursor: pointer;
+          width: 40px;
+          
+
+          .bar {
+              height: 4px;
+              width: 25px;
+              margin: 3px 0;
+              transition: 0.4s;
+              background-color: #50301e; // Cor das barras do menu
+              
           }
-  
-          a {
-            padding: 10px;
-            border-bottom: 1px solid 
-          }
-        }
       }
-    }
+
+      nav {
+          display: flex;
+          gap: 20px;
+
+          a {
+              text-decoration: none;
+              color: #50301e; // Cor do texto
+              font: 600 18px 'K2D'; // Estilo da fonte
+              padding: 10px 20px; // Espaçamento interno
+              border-radius: 5px; // Bordas arredondadas
+              transition: background-color 0.3s, transform 0.3s; // Transição suave para hover
+              position: relative; // Para o efeito de sombra
+
+              // Efeito hover
+              &:hover {
+                  background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
+                  transform: translateY(-2px); // Leve elevação
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+              }
+          }
+      }
+
+      @media (max-width: 768px) {
+          .menu-toggle {
+              display: flex;
+          }
+
+          nav {
+              display: none;
+              flex-direction: column;
+              position: absolute;
+              top: 60px; 
+              left: 0;
+              background-color: #ffd8d8;
+              width: 100%;
+              z-index: 1;
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Sombra para o menu dropdown
+
+              &.active {
+                  display: flex;
+              }
+
+              a {
+                  padding: 10px 15px; // Espaçamento interno
+                  border-bottom: 1px solid #50301e; // Borda inferior para os links
+                  text-align: center; // Centraliza o texto
+                  transition: background-color 0.3s; // Transição suave para hover
+
+                  &:hover {
+                      background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
+                  }
+              }
+          }
+      }
   }
+}
