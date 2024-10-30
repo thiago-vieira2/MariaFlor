@@ -49,6 +49,7 @@
         padding: 10px 20px;
         border-radius: 10px;
         background-color: #FFC5B4;
+        color: #50301e;
         
     }
 
@@ -79,6 +80,7 @@
         border: none;
         padding: 15px 25px;
         border-radius: 10px;
+        color: #50301e;
 
     }
 
@@ -130,6 +132,14 @@
     }
 
     .diet{
+        display: flex;
+        background-color:#FFc8b7;
+        padding: 10px;
+        border-radius: 10px;
+        gap: 15px;
+    }
+
+    .preco{
         display: flex;
         background-color:#FFc8b7;
         padding: 10px;

@@ -22,13 +22,15 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 30px;
+        gap: 3%;
     }
 
     nav{
        display: flex;
        width: 100%;
-       gap: 30px;
+       gap: 30%;
+    
+       justify-content: center;
     }
 
     nav a{
@@ -39,12 +41,12 @@
 
     .icons{
         display: flex;
-        gap: 10px;
+        gap: 10%;
     }
 
     
     .icons a img{
-        width: 30px;
+        width: 3%;
         cursor: pointer;
     }
     
