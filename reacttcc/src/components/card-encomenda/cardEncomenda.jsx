@@ -2,7 +2,13 @@ import './cardEncomenda.scss';
 
 function CardEncomenda({id,status,nome,contato,data_entrega,hora_entrega,forma_pagamento,descricao,valor}) {
 
-  
+  function Concluir(){
+    
+    }
+    
+  function Cancelar(){
+    
+    }
 
   return (
     <div className="card-encomenda">
@@ -35,8 +41,8 @@ function CardEncomenda({id,status,nome,contato,data_entrega,hora_entrega,forma_p
             </div>
 
             <div className='botoes'>
-              <button className='concluir'>Concluir</button>
-              <button className='cancelar'>Cancelar</button>
+              <button onClick="Concluir" className='concluir'>Concluir</button>
+              <button  onClick="Cancelar" className='cancelar'>Cancelar</button>
             </div>
           </div>
         </div>
