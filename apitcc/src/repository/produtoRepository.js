@@ -2,10 +2,10 @@ import con from './connection.js'
 
 export async function inserirProduto(produto) {
     const comando = `
-    insert into tb_produtos(nomeproduto, categoria, descricao, zeroAcucar, diet, precoKg, img)
-	values (?, ?, ?, ?, ?, ?, ?);
+    insert into tb_produtos(nomeproduto, categoria, descricao, zeroAcucar, diet, precoKg)
+	values (?, ?, ?, ?, ?, ?);
    `
-   let resposta = await con.query(comando, [produto.nomeproduto, produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg, produto.img]);
+   let resposta = await con.query(comando, [produto.nomeproduto, produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg ]);
    
    let info = resposta[0]
    let id = info.insertId
@@ -22,8 +22,7 @@ export async function buscarProduto(){
     descricao             descricao, 
     zeroacucar            zeroacucar,
     diet,                 diet,
-    precoKg               precoKg,
-    img                   img
+    precoKg               precoKg
     from tb_produtos;
 
 
@@ -43,11 +42,11 @@ export async function alterarProduto(produto, idProduto) {
         zeroacucar = ?,
         diet = ?,
         precoKg = ?,
-         img = ?
+       
     where id_produto = ?;
     ` 
 
-    let resposta = await con.query(comando, [produto.nomeproduto,produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg ,produto.img, idProduto])
+    let resposta = await con.query(comando, [produto.nomeproduto,produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg , idProduto])
     let info = resposta[0]
 
     return info.affectedRows

@@ -1,8 +1,9 @@
 import * as db from '../repository/produtoRepository.js'
+import consultarClienteService from '../service/produto/consultaProdutoService.js'
 import { Router } from "express"
 const endpoints = Router();
 
-endpoints.post('/produto/', async (req, resp) =>{
+endpoints.post('/produto', async (req, resp) =>{
     try{
         let produto = req.body
         let id = await db.inserirProduto(produto)

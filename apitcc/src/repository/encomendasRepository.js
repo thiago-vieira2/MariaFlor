@@ -4,7 +4,7 @@ import con from './connection.js';
 export async function inserirEncomendas(encomendas){
     const comando =`
         insert into tb_encomendas(nome, contato, descricao, data_entrega,forma_pagamento, valor)
-        values (?, ?, ?, ?, ?, ?, ?);
+        values (?, ?, ?, ?, ?, ?);
     `
 
     let resposta = await con.query(comando, [encomendas.nome, encomendas.contato, encomendas.descricao, encomendas.data_entrega, encomendas.forma_pagamento, encomendas.valor])
