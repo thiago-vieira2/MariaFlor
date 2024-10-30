@@ -48,6 +48,18 @@ export async function alterarEncomendas(encomendas, idEncomendas) {
     return info.affectedRows
 }
 
+export async function alterarStatus(encomendas, idEncomendas) {
+    const comando = `
+        update tb_encomendas
+        set status = ?
+        where id_encomenda = ?;
+    `
+    let respostas = await con.query(comando, [encomendas.status , idEncomendas] ) 
+    let info = respostas[0]
+
+    return info.affectedRows
+}
+
 
 
 export async function deletarEncomendas(id){

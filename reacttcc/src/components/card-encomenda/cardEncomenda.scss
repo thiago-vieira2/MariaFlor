@@ -177,7 +177,6 @@
         background-color: #C0D391;
         color: #2DC200;
     }
-
     .concluir:hover{
         background-color: #b1c57e;
         color: #2DC200;
@@ -191,6 +190,15 @@
     .cancelar:hover{
         background-color: #fa8d85;
         color: #A40003;
+    }
+
+    .pendente{
+        background-color: #CFBE00;
+        color: #FFF584;
+    }
+    .pendente:hover{
+        background-color: #fffd94;
+        color: #fbff00;
     }
 
 }

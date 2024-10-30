@@ -11,7 +11,7 @@ function Cabecalho() {
   return (
     <div className="cabecalho">
       <header className="principal" id='principal'>
-        <img src="./images/mariaflor_c_logo.png" alt="logo" width={220}/>
+        <img className='logo' src="./images/mariaflor_c_logo.png" alt="logo" width={220}/>
         <button className="menu-toggle" onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>

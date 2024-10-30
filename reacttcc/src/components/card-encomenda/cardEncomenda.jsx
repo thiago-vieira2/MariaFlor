@@ -1,22 +1,68 @@
+import { useState } from 'react';
 import './cardEncomenda.scss';
 
-function CardEncomenda({id,status,nome,contato,data_entrega,hora_entrega,forma_pagamento,descricao,valor}) {
+function CardEncomenda({ id, status, nome, contato, data_entrega, hora_entrega, forma_pagamento, descricao, valor }) {
 
-  function Concluir(){
+  const [status2, setStatus] = useState('pendente')
+
+  function Concluir() {
+
+    setStatus("concluido")
     
+
+  
+
+  }
+
+  function Cancelar() {
+
+    setStatus("cancelado")
+  }
+
+
+  function Pendente() {
+    setStatus("pendente")
+  }
+
+  const estilo = {
+    pendende: {
+      backgroundColor: 'yellow',
+      color: 'yellow'
+    },
+    concluido: {
+      backgroundColor: 'green',
+      color: 'green'
+
+    },
+    cancelado: {
+      backgroundColor: 'red',
+      color: 'red'
     }
-    
-  function Cancelar(){
-    
+  }
+
+  const estiloLetra = {
+    pendende: {
+      color: 'yellow'
+    },
+    concluido: {
+      color: 'green'
+
+    },
+    cancelado: {
+      color: 'red'
     }
+  }
+
+  const estiloBolinha = estilo[status2]
+  const estiloPalavra = estiloLetra[status2]
 
   return (
     <div className="card-encomenda">
-      <header> 
-        <p className='id'>#{id}</p> 
-        <div className='status-class'> 
-          <p>{status}</p>
-          <div className='bolinha'></div>
+      <header>
+        <p className='id'>#{id}</p>
+        <div className='status-class' >
+          <p style={estiloPalavra} >{status2}</p>
+          <div className='bolinha' style={estiloBolinha}></div>
         </div>
       </header>
 
@@ -40,14 +86,22 @@ function CardEncomenda({id,status,nome,contato,data_entrega,hora_entrega,forma_p
               <h2>Valor:</h2> <div className='valor'> R${valor} </div>
             </div>
 
-            <div className='botoes'>
-              <button onClick="Concluir" className='concluir'>Concluir</button>
-              <button  onClick="Cancelar" className='cancelar'>Cancelar</button>
-            </div>
+            {status2 == 'pendente' ?
+              <div className='botoes'>
+
+                <button onClick={Concluir} className='concluir'>Concluir</button>
+                <button onClick={Cancelar} className='cancelar'>Cancelar</button>
+              </div>
+              :
+              <div className='botoes'>
+
+                <button onClick={Pendente} className='pendente'>Pendente</button>
+              </div>
+            }
           </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 
