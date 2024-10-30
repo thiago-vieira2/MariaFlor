@@ -3,7 +3,9 @@ import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import CardProduto from '../../components/card-produto/cardProduto.jsx';
 import PaginaProduto from '../../components/pagina-produto/paginaProduto.jsx';
-import { useState } from 'react';
+import {useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const produtos = [
   {
@@ -86,6 +88,27 @@ function Produtos() {
     setProdutoSelecionado({id, titulo, descricao, valor , img})
   }
 
+  const [token, setToken] = useState(null);
+  const navigate = useNavigate();
+
+  const [id, setId] = useState('')
+
+  useEffect(() => {
+    let usuario = localStorage.getItem('Login')
+    setToken(usuario)
+
+    if (usuario == undefined) {
+        navigate('/')
+    }
+}, [])
+
+  async function Excluir() {
+    const url = `http://localhost:5020/produto/${id}?x-access-token=${token}`;
+    let resp = await axios.delete(url);
+    alert(`Id: ${id} deletado da lista de anotações.`);
+
+}
+
   return (
     <div className="produtos">
       <header className="principal">
@@ -95,6 +118,10 @@ function Produtos() {
     <div className='conteudo'>
       <div className='prod'>
         <h1>Produtos</h1>
+      </div>
+      <div className='delete'>
+        <input type="number" placeholder='ID que deseja deletar' />
+        <img className='lixeira' src="./images/lixeira.png" alt="" width={20} height={20} onClick={Excluir}/>
       </div>
 
       <div className='faixa-prod'>
