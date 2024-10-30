@@ -58,7 +58,7 @@ function AddEncomenda() {
         <div className='descricao'>
           <div className='campo'>
             <h2>Descrição</h2>
-            <textarea className='mensagem'>value={descricao} onChange={e => setDescricao(e.target.value)}</textarea>
+            <textarea className='mensagem' value={descricao} onChange={e => setDescricao(e.target.value)}></textarea>
           </div>
           <div className='preco'>
             <h2>Total: R$</h2> <input type="number" className='valor' value={valor} onChange={e => setValor(e.target.value)}/>

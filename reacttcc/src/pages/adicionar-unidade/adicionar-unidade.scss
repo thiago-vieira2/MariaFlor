@@ -26,6 +26,7 @@
         flex-direction: column;
         gap: 40px;
         align-items: flex-start;
+        width: 630px;
     }
 
     .adicionar {
@@ -69,28 +70,37 @@
     }
 
     .endereco input {
-        width: 100%;
+        width: 600px;
         max-width: 600px;
         padding: 10px 25px;
         border-radius: 10px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px 25px;
+            border-radius: 10px;
+        }
     }
 
-    .funcionamento,
-    .maps {
+    .funcionamento{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        gap: 12px;
+        gap:12px;
+    }
 
-        @media (max-width: 768px) {
-            flex-direction: column;
-        }
+    .maps{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row ;
+        gap: 10px;
     }
 
     .maps input {
-        width: 100%;
-        max-width: 580px;
+        width: 435px;
     }
 
     .baixo {
