@@ -2,9 +2,27 @@ import './adicionar-unidade.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
+
 
 function AddUnidade() {
 
+  async function salvar() {
+    let paramCorpo = {
+      "img":img,
+      "endereco":endereco,
+      "abre":abre,
+      "fecha":fecha,
+      "url":url
+    }
+
+    const url = 'http://localhost:5020/encomendas';
+    let resp = await axios.post(url, paramCorpo);
+
+    alert(resp);
+  }
+
+  const [img,setImg] = useState('')
   const [endereco,setEndereco] = useState('')
   const [abre,setAbre] = useState('')
   const [fecha,setFecha] = useState('')
@@ -60,7 +78,7 @@ function AddUnidade() {
             <label className="picture" htmlFor="picture__input" tabIndex="0">
               <span className="picture__image" ref={pictureImageRef}></span>
             </label>
-            <input type="file" name="picture__input" id="picture__input" ref={inputFileRef} />
+            <input type="file" name="picture__input" id="picture__input" ref={inputFileRef} value={img} onChange={e => setImg(e.target.value)}/>
           </div>
 
           <div className="interativo">
