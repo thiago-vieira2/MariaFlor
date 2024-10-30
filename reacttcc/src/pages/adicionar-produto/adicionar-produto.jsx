@@ -2,15 +2,34 @@ import './adicionar-produto.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 function AddProduto() {
 
-  const [titulo,setTitulo] = useState('')
+  async function salvar() {
+    let paramCorpo = {
+      "img":img,
+      "nomeproduto":nomeproduto,
+      "categoria":categoria,
+      "descricao":descricao,
+      "zeroacucar":zeroacucar,
+      "diet":diet,
+      "precoKg":precoKg
+    }
+
+    const url = 'http://localhost:5020/produto';
+    let resp = await axios.post(url, paramCorpo);
+
+    alert(resp);
+}
+
+  const [img,setImg] = useState('')
+  const [nomeproduto,setNomeProduto] = useState('')
   const [descricao,setDescricao] = useState('')
   const [zeroacucar,setZeroacucar] = useState(false)
   const [diet,setDiet] = useState(false)
-  
   const [categoria,setCategoria] = useState('')
+  const [precoKg, setPrecoKg] = useState(Number)
   
   const inputFileRef = useRef(null);
   const pictureImageRef = useRef(null);
@@ -62,12 +81,12 @@ function AddProduto() {
             <label className="picture" htmlFor="picture__input" tabIndex="0">
               <span className="picture__image" ref={pictureImageRef}></span>
             </label>
-            <input type="file" name="picture__input" id="picture__input" ref={inputFileRef} />
+            <input type="file" value={img} onChange={e => setImg(e.target.value)} name="picture__input" id="picture__input" ref={inputFileRef} />
           </div>
 
           <div className="interativo">
             <div className="inputs">
-              <input className='titulo-produto' type="text" placeholder="Título do Produto" value={titulo} onChange={e => setTitulo(e.target.value)}/>
+              <input className='titulo-produto' type="text" placeholder="Título do Produto" value={nomeproduto} onChange={e => setNomeProduto(e.target.value)}/>
 
               <select name="categoria" value={categoria} onChange={e => setCategoria(e.target.value)}>
                 <option value="salgado">Salgado</option>
@@ -90,7 +109,9 @@ function AddProduto() {
                   </div>
                 </div>
                 
-                <button>Adicionar</button>
+                <input className="preco" type="number" placeholder='Preço/Kg' value={precoKg} onChange={e => setPrecoKg(e.target.value)} />
+
+                <button onClick={salvar} >Adicionar</button>
               </div>
             </div>
 
