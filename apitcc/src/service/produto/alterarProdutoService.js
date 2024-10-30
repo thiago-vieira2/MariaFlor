@@ -1,6 +1,9 @@
 import { alterarProduto } from "../../repository/produtoRepository.js";
+import { validarCamposObrigatoriosProdutos } from "../../validation/produtos/produtosvalidation.js";
 
 export default async function alterarProdutoService(produto, idProduto){
+
+    validarCamposObrigatoriosProdutos(produto, idProduto)
 
     let LinhasAfetadas = await alterarProduto(produto, idProduto)
 

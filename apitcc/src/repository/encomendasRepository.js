@@ -3,11 +3,11 @@ import con from './connection.js';
 
 export async function inserirEncomendas(encomendas){
     const comando =`
-        insert into tb_encomendas(nome, contato, descricao, data_entrega,forma_pagamento, valor)
+        insert into tb_encomendas(nome, contato, descricao, data_entrega, hora_entrega,forma_pagamento, valor)
         values (?, ?, ?, ?, ?, ?);
     `
 
-    let resposta = await con.query(comando, [encomendas.nome, encomendas.contato, encomendas.descricao, encomendas.data_entrega, encomendas.forma_pagamento, encomendas.valor])
+    let resposta = await con.query(comando, [encomendas.nome, encomendas.contato, encomendas.descricao, encomendas.data_entrega, encomendas.hora_entrega, encomendas.forma_pagamento, encomendas.valor])
     let info = resposta[0]
     let id = info.insertId
 
@@ -22,6 +22,7 @@ export async function consultarEncomendas() {
     contato               contato,
     descricao             descricao,
     data_entrega          data_entrega,
+    hora_entrega          hora_entrega,  
     forma_pagamento       forma_pagamento, 
     valor                 valor 
     from tb_encomendas;
@@ -31,6 +32,7 @@ export async function consultarEncomendas() {
     return respostas
 }
 
+
 export async function alterarEncomendas(encomendas, idEncomendas) {
     const comando = `
         update tb_encomendas
@@ -38,11 +40,12 @@ export async function alterarEncomendas(encomendas, idEncomendas) {
             contato = ?, 
             descricao = ?, 
             data_entrega = ?,  
+            hora_entrega = ?,
             forma_pagamento = ?, 
             valor = ?
         where id_encomenda = ?;
     `
-    let respostas = await con.query(comando, [encomendas.nome, encomendas.contato, encomendas.descricao, encomendas.data_entrega, encomendas.forma_pagamento, encomendas.valor, idEncomendas] ) 
+    let respostas = await con.query(comando, [encomendas.nome, encomendas.contato, encomendas.descricao, encomendas.data_entrega, encomendas.hora_entrega,encomendas.forma_pagamento, encomendas.valor, idEncomendas] ) 
     let info = respostas[0]
 
     return info.affectedRows

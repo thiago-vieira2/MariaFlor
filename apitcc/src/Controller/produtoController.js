@@ -1,6 +1,6 @@
 
 import alterarProdutoService from "../service/produto/alterarProdutoService.js";
-import consultarProdutoServices from "../service/produto/consultaProdutoService.js";
+import consultarProdutoService from "../service/produto/consultaProdutoService.js";
 import deletarProdutoService from "../service/produto/deletarProdutoService.js";
 import inserirProdutoService from "../service/produto/inserirProdutoService.js";
 
@@ -34,7 +34,7 @@ endpoints.post('/produto/', async (req, resp) =>{
 
 endpoints.get('/produto', async (req, resp) =>{
     try{
-        let produto = await consultarProdutoServices();
+        let produto = await consultarProdutoService();
         resp.send(produto);
     }
     catch(err){
