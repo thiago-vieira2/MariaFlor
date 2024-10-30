@@ -1,11 +1,11 @@
-import { consultarClienteService } from "../repository/clienteRepository";
+import { buscarCliente } from "../../repository/clienteRepository.js";
 
-export default async function consultarClienteService(id){
 
-    let registros = await consultarClienteService(id);
+export default async function buscarClienteService(){
 
-    let cliente = registros[0];
+    let registros = await buscarCliente()
 
-    return cliente;
-    
+    return registros
+
+
 }
