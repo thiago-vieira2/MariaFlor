@@ -6,18 +6,18 @@
       justify-content:center; // Centraliza o conteúdo
       align-items: center;
       position:relative;
-      padding: 10px 0; // Adiciona um pouco de espaçamento vertical
-      gap: 20px;
+      padding: 2% 0; // Adiciona um pouco de espaçamento vertical
+      gap: 2%;
 
       .menu-toggle {
           display: none;
           flex-direction: column;
           cursor: pointer;
-          width: 40px;
+          width: 12%;
           
 
           .bar {
-              height: 4px;
+              height: 4PX;
               width: 25px;
               margin: 3px 0;
               transition: 0.4s;
@@ -28,14 +28,14 @@
 
       nav {
           display: flex;
-          gap: 20px;
+          
 
           a {
               text-decoration: none;
               color: #50301e; // Cor do texto
               font: 600 18px 'K2D'; // Estilo da fonte
               padding: 10px 20px; // Espaçamento interno
-              border-radius: 5px; // Bordas arredondadas
+              border-radius: 5%; // Bordas arredondadas
               transition: background-color 0.3s, transform 0.3s; // Transição suave para hover
               position: relative; // Para o efeito de sombra
 
@@ -57,7 +57,7 @@
               display: none;
               flex-direction: column;
               position: absolute;
-              top: 60px; 
+              top: 60pX; 
               left: 0;
               background-color: #ffd8d8;
               width: 100%;
