@@ -6,14 +6,14 @@ export async function inserirProduto(produto) {
 	values (?, ?, ?, ?, ?, ?);
    `
    let resposta = await con.query(comando, [produto.nomeproduto, produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg ]);
-   
+
    let info = resposta[0]
    let id = info.insertId
 
    return id
 }
 
-export async function buscarProduto(){
+export async function consultarProduto(){
     const comando = `
     
     select id_produto, 
@@ -41,12 +41,12 @@ export async function alterarProduto(produto, idProduto) {
         descricao = ?,
         zeroacucar = ?,
         diet = ?,
-        precoKg = ?,
-       
+        precoKg = ?
     where id_produto = ?;
     ` 
 
     let resposta = await con.query(comando, [produto.nomeproduto,produto.categoria, produto.descricao, produto.zeroacucar, produto.diet, produto.precoKg , idProduto])
+
     let info = resposta[0]
 
     return info.affectedRows

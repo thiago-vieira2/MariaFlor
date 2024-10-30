@@ -1,11 +1,21 @@
-import * as db from '../repository/unidadeRepository.js'
+
+import alterarUnidadeService from "../service/unidade/alterarUnidadeService.js";
+import consultarUnidadeService from "../service/unidade/consultaUnidadeService.js";
+import deletarUnidadeService from "../service/unidade/deletarUnidadeService.js";
+import inseriUnidadeService from "../service/unidade/inserirUnidadeService.js";
+
 import { Router } from "express"
 const endpoints = Router();
+
+
+
+
+
 
 endpoints.post('/unidade/', async (req, resp) =>{
     try{
         let unidade = req.body
-        let id = await db.inserirUnidade(unidade)
+        let id = await inseriUnidadeService(unidade)
 
         resp.send({
             idunidade: id
@@ -18,9 +28,15 @@ endpoints.post('/unidade/', async (req, resp) =>{
     }
 })
 
+
+
+
+
+
+
 endpoints.get('/unidade', async (req, resp) =>{
     try{
-        let unidade = await db.buscarUnidade();
+        let unidade = await consultarUnidadeService();
         resp.send(unidade);
     }
     catch(err){
@@ -30,18 +46,21 @@ endpoints.get('/unidade', async (req, resp) =>{
     }
 })
 
+
+
+
+
+
+
+
 endpoints.put('/unidade/:id', async (req, resp)=> {
     try{
-        let id = req.params.id;
+        let idUnidade = req.params.id;
         let unidade = req.body;
 
-        let LinhasAfetadas = await db.alterarUnidade(id, unidade);
-        if (LinhasAfetadas >= 1){
-            resp.send();
-        }
-        else {
-            resp.status(404).send ({error: 'Nenhum registro encontrado'})
-        }
+        await alterarUnidadeService(idUnidade, unidade);
+        
+        resp.send()
     }
     catch(err){
         resp.status(400).send ({
@@ -51,17 +70,17 @@ endpoints.put('/unidade/:id', async (req, resp)=> {
 })
 
 
+
+
+
+
+
 endpoints.delete('/unidade/:id', async (req, resp) => {
     try{
         let id = req.params.id;
-        let LinhasAfetadas = await db.deletarUnidade(id);
-        if(LinhasAfetadas >= 1){
-            resp.send();
-        }
-        else {
-            resp.status(404).send({error: 'Nenhum registro encontrado'})
-        }
-    
+        await deletarUnidadeService(id);
+        
+        resp.send()
     }
     catch (err){
         resp.status(400).send({

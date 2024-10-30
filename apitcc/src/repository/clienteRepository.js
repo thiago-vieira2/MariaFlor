@@ -8,12 +8,12 @@ export async function inserirCliente(cliente){
     let resposta = await con.query(comando, [cliente.nome, cliente.email, cliente.telefone, cliente.cpf])
 
     let info = resposta[0]
-    let id = info.inseriId
+    let id = info.insertId
 
     return id
 }
 
-export async function buscarCliente(){
+export async function consultarCliente(){
     const comando = `
     select      id_cliente,
     nome        nome,
