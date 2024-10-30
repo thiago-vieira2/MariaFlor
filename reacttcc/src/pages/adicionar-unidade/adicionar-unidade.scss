@@ -11,10 +11,12 @@
         justify-content: center;
         align-items: center;
         margin: 40px;
+        
+        
 
         @media (max-width: 768px) {
             flex-direction: column;
-            width: auto;
+            width: auto;    
             align-items: center;
             justify-content: center;
 
@@ -146,7 +148,7 @@
             width: 100%;
         }
     }
-
+    
     .imagem input {
         display: flex;
         justify-content: center;
@@ -192,4 +194,8 @@
         background-color: #ffc8b7;
         cursor: pointer;
     }
+}
+
+.cabecalho{
+    width: 100%;
 }
