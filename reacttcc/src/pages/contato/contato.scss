@@ -23,6 +23,11 @@
         flex-direction: column;
         gap: 10px;
         margin-bottom: 8%;
+
+        button{
+            border-radius: 10px;
+            font-size: 100%
+        }
     }
 
     .cima {
@@ -91,6 +96,7 @@
         font: 500 20px 'K2D';
         width: 150px;
         padding: 10px;
+        
 
         &:hover {
             background-color: #ffccbc;
