@@ -106,7 +106,7 @@ function Encomendas() {
               status={e.status}
               nome={e.nome}
               contato={e.contato}
-              data_entrega={e.data_entrega}
+              data_entrega={new Date(e.data_entrega) .toLocaleDateString()}
               hora_entrega={e.hora_entrega}
               forma_pagamento={e.forma_pagamento}
               descricao={e.descricao}
@@ -121,7 +121,7 @@ function Encomendas() {
               status={e.status}
               nome={e.nome}
               contato={e.contato}
-              data_entrega={e.data_entrega}
+              data_entrega={new Date(e.data_entrega) .toLocaleDateString()}
               hora_entrega={e.hora_entrega}
               forma_pagamento={e.forma_pagamento}
               descricao={e.descricao}

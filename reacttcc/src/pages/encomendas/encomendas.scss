@@ -11,8 +11,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 90%; 
-        max-width: 700px; 
+        width: 90%; // Alterado para 90% para telas menores
+        max-width: 700px; // Limite máximo
         padding: 25px;
         border-radius: 30px;
         background-color: #FFDACF;
@@ -24,13 +24,13 @@
 
         @media (max-width: 768px) {
             font-size: 20px;
-            padding: 15px; 
+            padding: 15px; // Ajusta o padding para telas menores
         }
     }
 
     .faixa {
-        width: 90%; 
-        max-width: 60%; 
+        width: 90%; // Alterado para 90%
+        max-width: 60%; // Limite máximo
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -39,14 +39,15 @@
         border-radius: 21px;
 
         @media (max-width: 768px) {
-            padding: 15px 20px; 
-            flex-direction: column;
-            align-items: stretch;
+            padding: 15px 20px; // Ajusta o padding para telas menores
+            flex-direction: column; // Alinha os itens em coluna
+            align-items: stretch; // Estica os itens
+        }
     }
 
     .faixa select {
-        width: 100%; 
-        max-width: 150px; 
+        width: 100%; // Alterado para 100%
+        max-width: 150px; // Limita a largura máxima
         display: flex;
         justify-content: center;
         align-items: center;
@@ -60,15 +61,18 @@
 
     .cards-encomendas {
         display: flex;
-        gap: 20px;
-        width: 90%; 
-        max-width: 1150px; 
+        flex-direction: row;
+        justify-content: space-between;
+        gap:0.5vh;
+
+        width: 90%; // Alterado para 90%
+        max-width: 1150px; // Limite máximo
         flex-wrap: wrap;
         align-items: center;
 
         @media (max-width: 768px) {
-            flex-direction: column; 
-            width: 100%; 
+            flex-direction: column; // Muda para coluna em telas menores
+            width: 100%; // Alterado para 100%
         }
     }
 }
@@ -92,8 +96,8 @@
         gap: 30%;
 
         @media (max-width: 768px) {
-            flex-direction: column;
-            gap: 10%; 
+            flex-direction: column; // Muda para coluna em telas menores
+            gap: 10%; // Ajusta o espaço entre os itens
         }
     }
 
@@ -123,8 +127,7 @@
         color: #50301e;
 
         @media (max-width: 768px) {
-            font-size: 18px;
+            font-size: 18px; // Ajusta o tamanho da fonte em telas menores
         }
     }
-}
 }
