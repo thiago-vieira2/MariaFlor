@@ -17,14 +17,7 @@ export async function inserirEncomendas(encomendas){
 export async function consultarEncomendas() {
     const comando = `
     
-    select id_encomenda, 
-    nome                  nome,
-    contato               contato,
-    descricao             descricao,
-    data_entrega          data_entrega,
-    hora_entrega          hora_entrega,  
-    forma_pagamento       forma_pagamento, 
-    valor                 valor 
+    select *
     from tb_encomendas;
     `
     let info = await con.query(comando)
@@ -51,13 +44,13 @@ export async function alterarEncomendas(encomendas, idEncomendas) {
     return info.affectedRows
 }
 
-export async function alterarStatus(encomendas, idEncomendas) {
+export async function alterarStatus(status, idEncomendas) {
     const comando = `
         update tb_encomendas
         set status = ?
         where id_encomenda = ?;
     `
-    let respostas = await con.query(comando, [encomendas.status , idEncomendas] ) 
+    let respostas = await con.query(comando, [status , idEncomendas] ) 
     let info = respostas[0]
 
     return info.affectedRows
