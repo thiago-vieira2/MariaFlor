@@ -1,8 +1,8 @@
 .cabecalho {
-    background-color: #FFD8D8;
-    width: 100%;
+background-color: #FFD8D8;
+width: 100%;
 
-  .botao-adm{
+    .botao-adm{
     display: flex;
     text-decoration: none;
     justify-content: center;
@@ -19,91 +19,92 @@
     }
     }
 
-  .principal {
-      display: flex;
-      justify-content:center; // Centraliza o conteúdo
-      align-items: center;
-      position:relative;
-      padding: 2% 0; // Adiciona um pouco de espaçamento vertical
-      gap: 5%;
+    .principal {
+        display: flex;
+        justify-content:center; // Centraliza o conteúdo
+        align-items: center;
+        position:relative;
+        padding: 2% 0; // Adiciona um pouco de espaçamento vertical
+        gap: 5%;
 
 
-      .menu-toggle {
-          display: none;
-          flex-direction: column;
-          cursor: pointer;
-          width: 12%;
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 12%;
+            
+
+            .bar {
+                height: 4PX;
+                width: 25px;
+                margin: 3px 0;
+                transition: 0.4s;
+                background-color: #50301e; // Cor das barras do menu
+                
+            }
+        }
+
+    nav {
+        display: flex;
           
 
-          .bar {
-              height: 4PX;
-              width: 25px;
-              margin: 3px 0;
-              transition: 0.4s;
-              background-color: #50301e; // Cor das barras do menu
-              
-          }
-      }
+        a{
+            text-decoration: none;
+            color: #50301e; // Cor do texto
+            font: 600 18px 'K2D'; // Estilo da fonte
+            padding: 10px 20px; // Espaçamento interno
+            border-radius: 5%; // Bordas arredondadas
+            transition: background-color 0.3s, transform 0.3s; // Transição suave para hover
+            position: relative; // Para o efeito de sombra
 
-      nav {
-          display: flex;
-          
-
-          a {
-              text-decoration: none;
-              color: #50301e; // Cor do texto
-              font: 600 18px 'K2D'; // Estilo da fonte
-              padding: 10px 20px; // Espaçamento interno
-              border-radius: 5%; // Bordas arredondadas
-              transition: background-color 0.3s, transform 0.3s; // Transição suave para hover
-              position: relative; // Para o efeito de sombra
-
-              // Efeito hover
-              &:hover {
-                  background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
-                  transform: translateY(-2px); // Leve elevação
-                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
-              }
-          }
-      }
+            // Efeito hover
+            &:hover {
+                background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
+                transform: translateY(-2px); // Leve elevação
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+            }
+        }
+    }
 
       @media (max-width: 768px) {
           .menu-toggle {
               display: flex;
               background-color: #FFD8D8;
+              border: none;
           }
           
-          .logo{
+            .logo{
             width: 30%;
-          }
+            }
 
-          nav {
-              display: none;
-              flex-direction: column;
-              position: absolute;
-              justify-content: space-around;
-              top: 60px; 
-              left: 0;
-              background-color: #FFD8D8;
-              width: 100%;
-              z-index: 1;
-              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Sombra para o menu dropdown
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                justify-content: space-around;
+                top: 60px; 
+                left: 0;
+                background-color: #FFD8D8;
+                width: 100%;
+                z-index: 1;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Sombra para o menu dropdown
 
-              &.active {
-                  display: flex;
-              }
+                &.active {
+                    display: flex;
+                }
 
-              a {
-                  padding: 10px 15px; // Espaçamento interno
-                  border-bottom: 1px solid #50301e; // Borda inferior para os links
-                  text-align: center; // Centraliza o texto
-                  transition: background-color 0.3s; // Transição suave para hover
+                a {
+                    padding: 10px 15px; // Espaçamento interno
+                    border-bottom: 1px solid #50301e; // Borda inferior para os links
+                    text-align: center; // Centraliza o texto
+                    transition: background-color 0.3s; // Transição suave para hover
 
-                  &:hover {
-                      background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
-                  }
-              }
-          }
-      }
-  }
+                    &:hover {
+                        background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
+                    }
+                }
+            }
+        }
+    }
 }

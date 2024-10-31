@@ -1,15 +1,12 @@
 import './cardUnidade.scss';
-// import { Link, useNavigate } from 'react-router-dom';
 
-// async function excluir(id, nome) {
-//   const url = `http://localhost:5020/unidades/${id}?x-access-token=${token}`;
-//   await axios.delete(url)
+import axios from 'axios'
+  
+import { Link} from 'react-router-dom';
 
-//   await buscar()
-//   toast.success(`${nome} removido da lista de inimigos!`)
-// }
 
 function CardUnidade({img,endereco,abre,fecha,url}) {
+
   return (
     <div className="card-unidade">
         
@@ -34,7 +31,7 @@ function CardUnidade({img,endereco,abre,fecha,url}) {
 
             {/* <Link onClick={() => excluir(item.id, item.nome)}>
             </Link> */}
-            <img className='lixeira' src="./images/lixeira.png" alt="" width={25} height={25}/>
+            <Link ><img className='lixeira' src="./images/lixeira.png" alt="" width={25} height={25}/></Link>
           </div>
         </div>  
     </div>
