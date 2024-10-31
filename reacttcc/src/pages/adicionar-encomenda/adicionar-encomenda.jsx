@@ -13,11 +13,13 @@ function AddEncomenda() {
       "contato":contato,
       "descricao":descricao,
       "data_entrega":dataEntrega,
+      "hora_entrega":horaEntrega,
       "forma_pagamento":formaPagamento,
       "valor":valor,
+      "status": "Pendente"
     }
 
-    const url = 'http://localhost:5020/encomendas';
+    const url = 'http://localhost:7000/encomendas';
     let resp = await axios.post(url, paramCorpo);
 
     alert(resp);

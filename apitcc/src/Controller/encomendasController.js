@@ -8,7 +8,7 @@ import alterarStatus from "../service/encomenda/alterarStatusService.js";
 import alterarStatusService from "../service/encomenda/alterarStatusService.js";
 const endpoints = Router();
 
-endpoints.post("/encomendas/", async (req, resp) => {
+endpoints.post("/encomendas", async (req, resp) => {
   try {
     let encomendas = req.body;
     let id = await inserirEncomendasService(encomendas);

@@ -53,7 +53,7 @@ function Encomendas() {
       const response = await axios.get(url);
       setListaEncomendas(response.data);};
 
-    const intervalId = setInterval(cardsEncomendas, 1000); 
+    const intervalId = setInterval(cardsEncomendas, 10); 
     return () => clearInterval(intervalId); 
   }, []);
 
