@@ -58,7 +58,7 @@
             width: 100%; // Ajusta a largura para 100% em telas menores
         }
     }
-    
+
     .mensagem textarea {
         width: 860px;
         height: 100px;
@@ -69,7 +69,9 @@
         font: 500 14px 'K2D';
         
         @media (max-width: 768px) {
-            width: 100%; // Ajusta a largura para 100% em telas menores
+            width: 100% // Ajusta a largura para 100% em telas menores
+
+            
         }
     }
     
