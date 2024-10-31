@@ -96,11 +96,10 @@ function Contato() {
 
         <div className='politica'>
           <div className='escrita'>
-            <p>Declaro que li e estou de acordo com a </p>
+            <p>Ao clicar em "Enviar", você declare que leu e está de acordo com a </p>
             <a href="" onClick={handleDownload}> Política de Privacidade </a>
-            <p>da Maria Flor.</p>
+            <p>da Front Company.</p>
           </div>
-          <input type="checkbox" checked={politica} onChange={() => setPolitica(!politica)} />
         </div>
 
         <button>Enviar</button>

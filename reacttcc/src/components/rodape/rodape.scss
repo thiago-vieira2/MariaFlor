@@ -7,7 +7,8 @@
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+
     @media (max-width: 768px) {
         flex-direction: column;
         gap: 15%;
@@ -40,7 +41,7 @@
 
     nav {
         display: flex;
-        width: 100%;
+        width: auto;
         justify-content: center;
         gap: 5%;
 
@@ -68,8 +69,6 @@
         &:hover {
             background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
             transform: translateY(-2px);
-            width: auto; // Leve elevação
-            height: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
         }
 
@@ -83,13 +82,15 @@
         
         @media (max-width: 768px) {
             flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
             gap: 35%;
         }
     }
 
     .icons a img {
         margin-top: 30px;
-        width: 30%;
+        width: 30px;
         cursor: pointer;
 
         @media (max-width: 768px) {

@@ -9,7 +9,7 @@ import alterarStatus from "../service/encomenda/alterarStatusService.js";
 import alterarStatusService from "../service/encomenda/alterarStatusService.js";
 const endpoints = Router();
 
-endpoints.post("/encomendas",autenticar,  async (req, resp) => {
+endpoints.post("/encomendas",  async (req, resp) => {
   try {
     let encomendas = req.body;
     let id = await inserirEncomendasService(encomendas);
@@ -23,7 +23,7 @@ endpoints.post("/encomendas",autenticar,  async (req, resp) => {
   }
 });
 
-endpoints.get("/encomendas", autenticar,  async (req, resp) => {
+endpoints.get("/encomendas",  async (req, resp) => {
   try {
     let encomendas = await consultarEncomendaService();
     resp.send(encomendas);
@@ -35,7 +35,7 @@ endpoints.get("/encomendas", autenticar,  async (req, resp) => {
 });
 
 
-endpoints.put("/encomendas/:id",autenticar,  async (req, resp) => {
+endpoints.put("/encomendas/:id",  async (req, resp) => {
   try {
     let idEncomendas = req.params.id;
     let encomendas = req.body;
@@ -49,7 +49,7 @@ endpoints.put("/encomendas/:id",autenticar,  async (req, resp) => {
   }
 });
 
-endpoints.put("/editar-status/:id", autenticar, async (req, resp) => {
+endpoints.put("/editar-status/:id", async (req, resp) => {
   try {
     let idEncomendas = req.params.id;
     let status = req.body;
@@ -63,7 +63,7 @@ endpoints.put("/editar-status/:id", autenticar, async (req, resp) => {
   }
 });
 
-endpoints.delete("/encomendas/:id", autenticar, async (req, resp) => {
+endpoints.delete("/encomendas/:id",  async (req, resp) => {
   try {
     let id = req.params.id;
 
