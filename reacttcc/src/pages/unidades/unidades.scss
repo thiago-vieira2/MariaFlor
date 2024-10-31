@@ -7,7 +7,6 @@
         flex-direction: column;
 
         @media (max-width: 768px) {
-            flex-direction: column;
             margin: 20px;
         }
     }
@@ -25,15 +24,26 @@
         text-decoration: none;
         color: #50301e;
         border-radius: 20px;
-        padding: 0 50px ;
+        padding: 0 50px;
+        
+        @media (max-width: 768px) {
+            padding: 0 20px; 
+            height: 70px; 
+        }
     }
 
-    .cards{
+    .cards {
         display: flex;
         align-items: center;
         gap: 30px;
         margin: 50px 40px;
         flex-wrap: wrap;
-        width: 1175px;
+        width: 100%; 
+        max-width: 1175px; 
+        
+        @media (max-width: 768px) {
+            margin: 20px; 
+            gap: 20px; 
+        }
     }
 }
