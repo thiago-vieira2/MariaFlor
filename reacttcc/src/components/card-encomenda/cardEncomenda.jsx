@@ -4,8 +4,8 @@ import axios from 'axios';
 
 function CardEncomenda({ id, status, nome, contato, data_entrega, hora_entrega, forma_pagamento, descricao, valor }) {
 
-  console.log(status);
-  
+  const [status2, setStatus] = useState(status)
+
   const MudarStatus = async (status, id) => {
     const url = `http://localhost:7000/editar-status/${id}`;
     const info = {
@@ -13,29 +13,31 @@ function CardEncomenda({ id, status, nome, contato, data_entrega, hora_entrega, 
     };
 
     const response = await axios.put(url, info);
+    return response.data;
 };
   
 
   async function Concluir() {
 
-    const certo = "Concluido"
-
-    let alterar = await MudarStatus(certo, id)
-    console.log('AQ')
+    const cond = "Concluida"
+    
+    let alterar = await MudarStatus(cond, id)
+    console.log(alterar)
   }
 
   async function Cancelar() {
 
-    const cancel = "Cancelado"
-    let alterar = await MudarStatus(cancel, id)
+        const cond = "Cancelado"
+    let alterar = await MudarStatus(cond, id)
     console.log("AQ2")
   }
 
 
    async function Pendente() {
-    const pen = "Pendende"
-    let alterar = await MudarStatus(pen, id)
-    console.log("AQ3")
+     const cond = "Pendente"
+    
+    let alterar = await MudarStatus(cond, id)
+    console.log(alterar)
   }
 
   const estilo = {
@@ -43,7 +45,8 @@ function CardEncomenda({ id, status, nome, contato, data_entrega, hora_entrega, 
       backgroundColor: 'yellow',
       color: 'yellow'
     },
-    Concluido: {
+    Concluida: {
+      
       backgroundColor: 'green',
       color: 'green'
 
@@ -58,7 +61,7 @@ function CardEncomenda({ id, status, nome, contato, data_entrega, hora_entrega, 
     Pendende: {
       color: 'yellow'
     },
-    Concluido: {
+    Concluida: {
       color: 'green'
 
     },
