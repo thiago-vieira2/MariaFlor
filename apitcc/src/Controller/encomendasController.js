@@ -23,7 +23,7 @@ endpoints.post("/encomendas",  async (req, resp) => {
   }
 });
 
-endpoints.get("/encomendas", autenticar,  async (req, resp) => {
+endpoints.get("/encomendas",  async (req, resp) => {
   try {
     let encomendas = await consultarEncomendaService();
     resp.send(encomendas);
@@ -49,7 +49,7 @@ endpoints.put("/encomendas/:id",  async (req, resp) => {
   }
 });
 
-endpoints.put("/editar-status/:id", autenticar, async (req, resp) => {
+endpoints.put("/editar-status/:id", async (req, resp) => {
   try {
     let idEncomendas = req.params.id;
     let status = req.body;
