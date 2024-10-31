@@ -44,19 +44,21 @@ const encomendas = [
 function Encomendas() {
   const [listaEncomendas, setListaEncomendas] = useState([]); 
 
- 
+
+
   useEffect(() => {
     const cardsEncomendas = async () => {
       
-        const url = 'http://localhost:7000/encomendas';
-        const response = await axios.get(url);
-        setListaEncomendas(response.data);
-        
-        
-    };
+      const url = 'http://localhost:7000/encomendas';
+      const response = await axios.get(url);
+      setListaEncomendas(response.data);};
 
-    cardsEncomendas();
+    const intervalId = setInterval(cardsEncomendas, 1000); 
+    return () => clearInterval(intervalId); 
   }, []);
+
+ 
+
 
   return (
     <div className="encomendas">

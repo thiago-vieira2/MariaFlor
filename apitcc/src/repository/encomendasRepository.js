@@ -50,7 +50,7 @@ export async function alterarStatus(status, idEncomendas) {
         set status = ?
         where id_encomenda = ?;
     `
-    let respostas = await con.query(comando, [status , idEncomendas] ) 
+    let respostas = await con.query(comando, [status.status , idEncomendas] ) 
     let info = respostas[0]
 
     return info.affectedRows
