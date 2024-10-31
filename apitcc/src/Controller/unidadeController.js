@@ -3,6 +3,7 @@ import alterarUnidadeService from "../service/unidade/alterarUnidadeService.js";
 import consultarUnidadeService from "../service/unidade/consultaUnidadeService.js";
 import deletarUnidadeService from "../service/unidade/deletarUnidadeService.js";
 import inseriUnidadeService from "../service/unidade/inserirUnidadeService.js";
+import { autenticar } from "../utils/jwts.js";
 
 import { Router } from "express"
 const endpoints = Router();
@@ -12,14 +13,21 @@ const endpoints = Router();
 
 
 
-endpoints.post('/unidade/', async (req, resp) =>{
+endpoints.post('/unidade/',autenticar, async (req, resp) =>{
     try{
         let unidade = req.body
         let id = await inseriUnidadeService(unidade)
 
-        resp.send({
-            idunidade: id
-        })
+        
+        if (id == null){
+            resp.send({ erro: "Usuario ou senha incorreta"})
+        } else {
+            let token = gerarToken(id)
+            resp.send({
+                "token": token
+            })
+        }
+   
     }
     catch(err){
         resp.status(400).send({
@@ -34,7 +42,7 @@ endpoints.post('/unidade/', async (req, resp) =>{
 
 
 
-endpoints.get('/unidade', async (req, resp) =>{
+endpoints.get('/unidade',autenticar, async (req, resp) =>{
     try{
         let unidade = await consultarUnidadeService();
         resp.send(unidade);
@@ -53,7 +61,7 @@ endpoints.get('/unidade', async (req, resp) =>{
 
 
 
-endpoints.put('/unidade/:id', async (req, resp)=> {
+endpoints.put('/unidade/:id',autenticar, async (req, resp)=> {
     try{
         let idUnidade = req.params.id;
         let unidade = req.body;

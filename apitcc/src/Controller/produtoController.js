@@ -3,7 +3,7 @@ import alterarProdutoService from "../service/produto/alterarProdutoService.js";
 import consultarProdutoService from "../service/produto/consultaProdutoService.js";
 import deletarProdutoService from "../service/produto/deletarProdutoService.js";
 import inserirProdutoService from "../service/produto/inserirProdutoService.js";
-
+import { autenticar } from "../utils/jwts.js";
 
 import { Router } from "express"
 const endpoints = Router();
@@ -12,14 +12,22 @@ const endpoints = Router();
 
 
 
-endpoints.post('/produto/', async (req, resp) =>{
+endpoints.post('/produto/', autenticar, async (req, resp) =>{
     try{
         let produto = req.body
         let id = await inserirProdutoService(produto)
 
-        resp.send({
-            idProduto: id
-        })
+        
+        if (id == null){
+            resp.send({ erro: "Usuario ou senha incorreta"})
+        } else {
+            let token = gerarToken(id)
+            resp.send({
+                "token": token
+            })
+        }
+   
+        
     }
     catch(err){
         resp.status(400).send({
@@ -32,7 +40,7 @@ endpoints.post('/produto/', async (req, resp) =>{
 
 
 
-endpoints.get('/produto', async (req, resp) =>{
+endpoints.get('/produto', autenticar, async (req, resp) =>{
     try{
         let produto = await consultarProdutoService();
         resp.send(produto);
@@ -48,7 +56,7 @@ endpoints.get('/produto', async (req, resp) =>{
 
 
 
-endpoints.put('/produto/:id', async (req, resp)=> {
+endpoints.put('/produto/:id', autenticar, async (req, resp)=> {
     try{
         let idProduto = req.params.id;
         let produto = req.body;
@@ -69,7 +77,7 @@ endpoints.put('/produto/:id', async (req, resp)=> {
 
 
 
-endpoints.delete('/produto/:id', async (req, resp) => {
+endpoints.delete('/produto/:id', autenticar, async (req, resp) => {
     try{
         let id = req.params.id;
         await deletarProdutoService(id);
