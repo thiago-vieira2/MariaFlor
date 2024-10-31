@@ -1,11 +1,15 @@
 import './cardUnidade.scss';
-
 import axios from 'axios'
-  
-import { Link} from 'react-router-dom';
 
 
-function CardUnidade({img,endereco,abre,fecha,url}) {
+
+function CardUnidade({img,endereco,abre,fecha,url, id}) {
+
+  async function apagar(){
+      
+      const url = `http://localhost:7000/unidade/${id}`;
+      const response = await axios.delete(url);
+  };
 
   return (
     <div className="card-unidade">
@@ -29,9 +33,7 @@ function CardUnidade({img,endereco,abre,fecha,url}) {
               <a href={url} target="_blank">Buscar Endereço em Google Maps</a>
             </div>
 
-            {/* <Link onClick={() => excluir(item.id, item.nome)}>
-            </Link> */}
-            <Link ><img className='lixeira' src="./images/lixeira.png" alt="" width={25} height={25}/></Link>
+            <img className='lixeira' src="./images/lixeira.png" alt="" width={25} height={25} onClick={apagar}/>
           </div>
         </div>  
     </div>

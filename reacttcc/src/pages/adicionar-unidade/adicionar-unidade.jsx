@@ -9,11 +9,13 @@ function AddUnidade() {
   const [endereco, setEndereco] = useState('');
   const [abre, setAbre] = useState('');
   const [fecha, setFecha] = useState('');
-  const [url, setUrl] = useState('');
+  const [url_maps, setUrl_maps] = useState('');
 
   const inputFileRef = useRef(null);
   const pictureImageRef = useRef(null);
   const pictureImageTxt = "Buscar imagem no dispositivo";
+
+ 
 
   async function salvar() {
     let paramCorpo = {
@@ -21,17 +23,12 @@ function AddUnidade() {
       endereco: endereco,
       abre: abre,
       fecha: fecha,
-      url: url, // Aqui, 'url' já é a variável de estado
+      url_maps: url_maps
     };
 
-    const apiUrl = 'http://localhost:5020/unidades'; // Mudei 'url' para 'apiUrl' para evitar confusão
-    try {
-      let resp = await axios.post(apiUrl, paramCorpo);
-      alert(resp.data); // Exibe a resposta da API
-    } catch (error) {
-      console.error("Erro ao salvar unidade:", error);
-      alert("Erro ao salvar unidade.");
-    }
+    const url = 'http://localhost:7000/encomendas';
+    let resp = await axios.post(url, paramCorpo);
+
   }
 
   useEffect(() => {
@@ -125,8 +122,8 @@ function AddUnidade() {
                 <input
                   type="url"
                   placeholder='URL da Localização da Empresa no Google Maps'
-                  value={url}
-                  onChange={e => setUrl(e.target.value)}
+                  value={url_maps}
+                  onChange={e => setUrl_maps(e.target.value)}
                 />
               </div>
 

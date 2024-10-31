@@ -2,34 +2,28 @@ import './unidades.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import CardUnidade from '../../components/card-unidade/cardUnidade.jsx';
+import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
-const unidades = [
-  {
-    "img": "./images/doceria.jpg",
-    "endereco": "Av. José Ribeiro Junqueira, 670 - Jardim Colonial, São Paulo - SP, 04821-020",
-    "abre": "09:00",
-    "fecha": "17:30",
-    "url": "https://maps.app.goo.gl/iQHXHL2ioas8Z14WA"
-  },
 
-  {
-    "img": "./images/doceria.jpg",
-    "endereco": "Av. José Ribeiro Junqueira, 670 - Jardim Colonial, São Paulo - SP, 04821-020",
-    "abre": "09:00",
-    "fecha": "17:30",
-    "url": "https://maps.app.goo.gl/iQHXHL2ioas8Z14WA"
-  },
 
-  {
-    "img": "./images/doceria.jpg",
-    "endereco": "Av. José Ribeiro Junqueira, 670 - Jardim Colonial, São Paulo - SP, 04821-020",
-    "abre": "09:00",
-    "fecha": "17:30",
-    "url": "https://maps.app.goo.gl/iQHXHL2ioas8Z14WA"
-  },
-]
 
 function Unidades() {
+  
+  const [ListaUnidade, setListaUnidade] = useState([])
+  
+  useEffect(() => {
+    const cardsUnidades = async () => {
+      
+      const url = 'http://localhost:7000/unidade';
+      const response = await axios.get(url);
+      setListaUnidade(response.data);};
+
+    const intervalId = setInterval(cardsUnidades, 10); 
+    return () => clearInterval(intervalId); 
+  }, []);
+
+
   return (
     <div className="unidades">
       <header className="principal">
@@ -47,12 +41,13 @@ function Unidades() {
         </div>
 
         <div className='cards'>
-        {unidades.map(u => <CardUnidade
+        {ListaUnidade.map(u => <CardUnidade
             img={u.img}
             endereco={u.endereco}
             abre={u.abre}
             fecha={u.fecha}
-            url={u.url}
+            url={u.url_maps}
+            id={u.id_unidade}
             />)}
         </div>
     </div>

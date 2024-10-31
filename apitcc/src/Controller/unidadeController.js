@@ -13,21 +13,10 @@ const endpoints = Router();
 
 
 
-endpoints.post('/unidade/',autenticar, async (req, resp) =>{
+endpoints.post('/unidade', async (req, resp) =>{
     try{
         let unidade = req.body
         let id = await inseriUnidadeService(unidade)
-
-        
-        if (id == null){
-            resp.send({ erro: "Usuario ou senha incorreta"})
-        } else {
-            let token = gerarToken(id)
-            resp.send({
-                "token": token
-            })
-        }
-   
     }
     catch(err){
         resp.status(400).send({
@@ -42,7 +31,7 @@ endpoints.post('/unidade/',autenticar, async (req, resp) =>{
 
 
 
-endpoints.get('/unidade',autenticar, async (req, resp) =>{
+endpoints.get('/unidade', async (req, resp) =>{
     try{
         let unidade = await consultarUnidadeService();
         resp.send(unidade);
@@ -61,7 +50,7 @@ endpoints.get('/unidade',autenticar, async (req, resp) =>{
 
 
 
-endpoints.put('/unidade/:id',autenticar, async (req, resp)=> {
+endpoints.put('/unidade/:id', async (req, resp)=> {
     try{
         let idUnidade = req.params.id;
         let unidade = req.body;

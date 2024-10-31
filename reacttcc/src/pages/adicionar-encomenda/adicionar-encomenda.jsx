@@ -22,7 +22,7 @@ function AddEncomenda() {
     const url = 'http://localhost:7000/encomendas';
     let resp = await axios.post(url, paramCorpo);
 
-    alert(resp);
+
 }
 
   const [nome,setNome] = useState('')
