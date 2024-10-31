@@ -57,6 +57,12 @@
         border-radius: 20px;
         background-color: #FFDACF;
         color: #50301e;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+        }
+
     }
 
     .endereco {
@@ -91,6 +97,11 @@
         align-items: center;
         flex-direction: row;
         gap:12px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     .maps{
@@ -99,6 +110,10 @@
         align-items: center;
         flex-direction: row ;
         gap: 10px;
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     .maps input {

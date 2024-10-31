@@ -8,6 +8,11 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap; 
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 15%;
+        align-items: center; 
+    }
 
     .principal {
         display: flex;
@@ -18,7 +23,8 @@
 
         @media (max-width: 768px) {
             flex-direction: column;
-            gap: 10%;
+            gap: 15%;
+            align-items: center; 
         }
     }
 
@@ -27,56 +33,71 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        flex-wrap: wrap;
         gap: 10%;
+       
     }
 
     nav {
         display: flex;
         width: 100%;
-        gap: 30%; // Alterado para 20%
         justify-content: center;
-        gap:20%;
-        
+        gap: 5%;
+
         @media (max-width: 768px) {
             flex-direction: column; 
-            gap: 20%; // Alterado para 20%
+            align-items: center;
+            gap: 15%;
         }
     }
 
     nav a {
         text-decoration: none;
-        font: 600 20px 'K2D';
-        color: #50301e;
-        gap:10;
+            font: 600 20px 'K2D';
+            color: #50301e;
+            padding: 10px;
+
+            @media (max-width: 768px) {
+                font-size: 30px;
+                padding: 11px;
+                text-align: center;
+                height: auto;
+            }
         
 
-        @media (max-width: 768px) {
-            font-size: 16px; 
-            gap: 10%;
-          
+        &:hover {
+            background-color: rgba(80, 48, 30, 0.1); // Cor de fundo ao passar o mouse
+            transform: translateY(-2px);
+            width: auto; // Leve elevação
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
         }
+
+
     }
 
     .icons {
         display: flex;
+        justify-content: center;
         gap: 10%;
         
-        
-        
         @media (max-width: 768px) {
-            gap: 5%; 
-           
+            flex-wrap: wrap;
+            gap: 35%;
         }
     }
 
     .icons a img {
-        width: 100%; // Alterado para 20%
-        gap: 10%;
-        
+        margin-top: 30px;
+        width: 30%;
         cursor: pointer;
 
         @media (max-width: 768px) {
-            width: 50%; // Alterado para 20%
+            width: 40%;
+            max-width: 50px;
         }
     }
 }
+
+    
+

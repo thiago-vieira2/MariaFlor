@@ -11,7 +11,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 700px;
+        width: 90%; // Alterado para 90% para telas menores
+        max-width: 700px; // Limite máximo
         padding: 25px;
         border-radius: 30px;
         background-color: #FFDACF;
@@ -22,13 +23,14 @@
         margin-top: 30px;
 
         @media (max-width: 768px) {
-            width: 90%;
             font-size: 20px;
+            padding: 15px; // Ajusta o padding para telas menores
         }
     }
 
     .faixa {
-        width: 60%;
+        width: 90%; // Alterado para 90%
+        max-width: 60%; // Limite máximo
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -37,13 +39,15 @@
         border-radius: 21px;
 
         @media (max-width: 768px) {
-            width: 90%;
-            padding: 15px 20px;
+            padding: 15px 20px; // Ajusta o padding para telas menores
+            flex-direction: column; // Alinha os itens em coluna
+            align-items: stretch; // Estica os itens
         }
     }
 
     .faixa select {
-        width: 150px;
+        width: 100%; // Alterado para 100%
+        max-width: 150px; // Limita a largura máxima
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,25 +57,74 @@
         background-color: #FFC5B4;
         border: none;
         color: #50301e;
-
-        @media (max-width: 768px) {
-            width: 100%; // Aumenta a largura em telas menores
-            max-width: 150px; // Limita a largura máxima
-        }
     }
 
-    .cards-encomendas{
+    .cards-encomendas {
         display: flex;
         gap: 20px;
-        width: 1150px;
+        width: 90%; // Alterado para 90%
+        max-width: 1150px; // Limite máximo
         flex-wrap: wrap;
         align-items: center;
 
         @media (max-width: 768px) {
-            display: flex;
-            flex-direction: column;
-            width:375px
+            flex-direction: column; // Muda para coluna em telas menores
+            width: 100%; // Alterado para 100%
+        }
+    }
+}
+
+.rodape {
+    position: static;
+    bottom: 0;
+    display: flex;
+    padding: 20px;
+    background-color: #FFD8D8;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+
+    .principal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 30%;
+
+        @media (max-width: 768px) {
+            flex-direction: column; // Muda para coluna em telas menores
+            gap: 10%; // Ajusta o espaço entre os itens
         }
     }
 
+    .meio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10%;
+    }
+
+    nav {
+        display: flex;
+        width: 100%;
+        gap: 20%; // Alterado para 20%
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column; 
+            gap: 20%; // Ajusta o espaço entre os links
+        }
+    }
+
+    nav a {
+        text-decoration: none;
+        font: 600 20px 'K2D';
+        color: #50301e;
+
+        @media (max-width: 768px) {
+            font-size: 18px; // Ajusta o tamanho da fonte em telas menores
+        }
+    }
 }
