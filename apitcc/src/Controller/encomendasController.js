@@ -7,6 +7,7 @@ import deletarEncomendasService from "../service/encomenda/deletarEncomendaServi
 import { Router } from "express";
 import alterarStatus from "../service/encomenda/alterarStatusService.js";
 import alterarStatusService from "../service/encomenda/alterarStatusService.js";
+import consultarEncomendasFiltroService from "../service/encomenda/consultarEncomendaFiltroService.js";
 const endpoints = Router();
 
 endpoints.post("/encomendas",  async (req, resp) => {
@@ -33,6 +34,20 @@ endpoints.get("/encomendas",  async (req, resp) => {
     });
   }
 });
+
+
+endpoints.get("/encomendas-filtro/:filtro",  async (req, resp) => {
+  try {
+    let filtro= req.params.filtro
+    let encomendas = await consultarEncomendasFiltroService(filtro);
+    resp.send(encomendas);
+  } catch (err) {
+    resp.status(400).send({
+      erro: err.message,
+    });
+  }
+});
+
 
 
 endpoints.put("/encomendas/:id",  async (req, resp) => {

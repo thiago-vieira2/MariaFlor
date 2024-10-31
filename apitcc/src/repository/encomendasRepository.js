@@ -26,6 +26,20 @@ export async function consultarEncomendas() {
 }
 
 
+export async function consultarEncomendasFiltro(filtro) {
+    const comando = `
+    
+    select *
+    from tb_encomendas
+    where status = ?;
+    `
+    let info = await con.query(comando, [filtro])
+    let respostas = info[0]
+    return respostas
+}
+
+
+
 export async function alterarEncomendas(encomendas, idEncomendas) {
     const comando = `
         update tb_encomendas

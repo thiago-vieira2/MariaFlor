@@ -43,6 +43,9 @@ const encomendas = [
 
 function Encomendas() {
   const [listaEncomendas, setListaEncomendas] = useState([]); 
+  const [status, setStatus] = useState('todos');
+  const [Filtrados, setFiltrados] = useState([]);  
+
 
 
 
@@ -56,6 +59,17 @@ function Encomendas() {
     const intervalId = setInterval(cardsEncomendas, 10); 
     return () => clearInterval(intervalId); 
   }, []);
+
+  useEffect(() => {
+    const cardsEncomendas = async () => {
+      
+      const url = `http://localhost:7000/encomendas-filtro/${status}`;
+      const response = await axios.get(url);
+      setFiltrados(response.data);};
+
+    const intervalId = setInterval(cardsEncomendas, 10); 
+    return () => clearInterval(intervalId); 
+  }, [status]);
 
  
 
@@ -75,16 +89,17 @@ function Encomendas() {
 
         <div className='faixa'>
           <h2>Encomendas</h2>
-          <select name="status">
+          <select name="status" onChange={e => setStatus(e.target.value)}>
             <option value="todos">Todos</option>
-            <option value="concluidos">Concluídos</option>
-            <option value="pendentes">Pendentes</option>
-            <option value="cancelados">Cancelados</option>
+            <option value="Concluida">Concluídos</option>
+            <option value="Pendente">Pendentes</option>
+            <option value="Cancelado">Cancelados</option>
           </select>
         </div>
 
         <div className='cards-encomendas'>
-          {listaEncomendas.map(e => (
+          {status == 'todos'?
+          listaEncomendas.map(e => (
             <CardEncomenda
               key={e.id}
               id={e.id_encomenda}
@@ -97,7 +112,23 @@ function Encomendas() {
               descricao={e.descricao}
               valor={e.valor}
             />
-          ))}
+          )):
+
+          Filtrados.map(e => (
+            <CardEncomenda
+              key={e.id}
+              id={e.id_encomenda}
+              status={e.status}
+              nome={e.nome}
+              contato={e.contato}
+              data_entrega={e.data_entrega}
+              hora_entrega={e.hora_entrega}
+              forma_pagamento={e.forma_pagamento}
+              descricao={e.descricao}
+              valor={e.valor}
+            />
+          ))
+        }
         </div>
       </div>
 
