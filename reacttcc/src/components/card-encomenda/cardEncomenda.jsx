@@ -1,67 +1,81 @@
 import { useState } from 'react';
 import './cardEncomenda.scss';
+import axios from 'axios';
 
 function CardEncomenda({ id, status, nome, contato, data_entrega, hora_entrega, forma_pagamento, descricao, valor }) {
 
-  const [status2, setStatus] = useState('pendente')
+  console.log(status);
+  
+  const MudarStatus = async (status, id) => {
+    const url = `http://localhost:7000/editar-status/${id}`;
+    const info = {
+        "status": status
+    };
 
-  function Concluir() {
-
-    setStatus("concluido")
-    
-
+    const response = await axios.put(url, info);
+};
   
 
+  async function Concluir() {
+
+    const certo = "Concluido"
+
+    let alterar = await MudarStatus(certo, id)
+    console.log('AQ')
   }
 
-  function Cancelar() {
+  async function Cancelar() {
 
-    setStatus("cancelado")
+    const cancel = "Cancelado"
+    let alterar = await MudarStatus(cancel, id)
+    console.log("AQ2")
   }
 
 
-  function Pendente() {
-    setStatus("pendente")
+   async function Pendente() {
+    const pen = "Pendende"
+    let alterar = await MudarStatus(pen, id)
+    console.log("AQ3")
   }
 
   const estilo = {
-    pendende: {
+    Pendende: {
       backgroundColor: 'yellow',
       color: 'yellow'
     },
-    concluido: {
+    Concluido: {
       backgroundColor: 'green',
       color: 'green'
 
     },
-    cancelado: {
+    Cancelado: {
       backgroundColor: 'red',
       color: 'red'
     }
   }
 
   const estiloLetra = {
-    pendende: {
+    Pendende: {
       color: 'yellow'
     },
-    concluido: {
+    Concluido: {
       color: 'green'
 
     },
-    cancelado: {
+    Cancelado: {
       color: 'red'
     }
   }
 
-  const estiloBolinha = estilo[status2]
-  const estiloPalavra = estiloLetra[status2]
+  const estiloBolinha = estilo[status]
+  const estiloPalavra = estiloLetra[status]
 
   return (
     <div className="card-encomenda">
       <header>
         <p className='id'>#{id}</p>
         <div className='status-class' >
-          <p style={estiloPalavra} >{status2}</p>
+          <p style={estiloPalavra} >{status}</p>
           <div className='bolinha' style={estiloBolinha}></div>
         </div>
       </header>
@@ -86,7 +100,7 @@ function CardEncomenda({ id, status, nome, contato, data_entrega, hora_entrega, 
               <h2>Valor:</h2> <div className='valor'> R${valor} </div>
             </div>
 
-            {status2 == 'pendente' ?
+            {status == 'Pendente' ?
               <div className='botoes'>
 
                 <button onClick={Concluir} className='concluir'>Concluir</button>

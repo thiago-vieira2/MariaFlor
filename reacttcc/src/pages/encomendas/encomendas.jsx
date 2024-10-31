@@ -2,6 +2,8 @@ import './encomendas.scss';
 import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import CardEncomenda from '../../components/card-encomenda/cardEncomenda.jsx';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const encomendas = [
   {
@@ -15,7 +17,6 @@ const encomendas = [
     "descricao":"1x coxinha de costela, 1x bolo de cenoura",
     "valor":"120,00"
   },
-
   {
     "id": 2,
     "status":"Con",
@@ -27,7 +28,6 @@ const encomendas = [
     "descricao":"1x coxinha de costela, 1x bolo de cenoura",
     "valor":"120,00"
   },
-
   {
     "id": 3,
     "status":"Pendente",
@@ -39,19 +39,38 @@ const encomendas = [
     "descricao":"1x coxinha de costela, 1x bolo de cenoura",
     "valor":"120,00"
   }
-]
+];
 
 function Encomendas() {
+  const [listaEncomendas, setListaEncomendas] = useState([]); 
+
+ 
+  useEffect(() => {
+    const cardsEncomendas = async () => {
+      
+        const url = 'http://localhost:7000/encomendas';
+        const response = await axios.get(url);
+        setListaEncomendas(response.data);
+        
+        
+    };
+
+    cardsEncomendas();
+  }, []);
+
   return (
     <div className="encomendas">
       <header className="principal">
-        <Cabecalho/>
+        <Cabecalho />
       </header>
-        
-    <div className='conteudo'>
-        
-        <a className='add' href="/addencomenda"> <img src="./images/add.png" alt="" width={30}/> Adicionar nova encomenda <img src="./images/encomenda.png" alt="" width={30}/></a>
-        
+
+      <div className='conteudo'>
+        <a className='add' href="/addencomenda"> 
+          <img src="./images/add.png" alt="" width={30}/> 
+          Adicionar nova encomenda 
+          <img src="./images/encomenda.png" alt="" width={30}/>
+        </a>
+
         <div className='faixa'>
           <h2>Encomendas</h2>
           <select name="status">
@@ -63,24 +82,26 @@ function Encomendas() {
         </div>
 
         <div className='cards-encomendas'>
-        {encomendas.map(e => <CardEncomenda
-            id={e.id}
-            nome={e.nome}
-            contato={e.contato}
-            data_entrega={e.data_entrega}
-            hora_entrega={e.hora_entrega}
-            forma_pagamento={e.forma_pagamento}
-            descricao={e.descricao}
-            valor={e.valor}
-            />)}
-          
+          {listaEncomendas.map(e => (
+            <CardEncomenda
+              key={e.id}
+              id={e.id_encomenda}
+              status={e.status}
+              nome={e.nome}
+              contato={e.contato}
+              data_entrega={e.data_entrega}
+              hora_entrega={e.hora_entrega}
+              forma_pagamento={e.forma_pagamento}
+              descricao={e.descricao}
+              valor={e.valor}
+            />
+          ))}
         </div>
-
-    </div>
+      </div>
 
       <footer>
-        <Rodape/>
-      </footer> 
+        <Rodape />
+      </footer>
     </div>
   );
 }

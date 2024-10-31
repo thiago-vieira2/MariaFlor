@@ -4,6 +4,8 @@ import alterarEncomendaService from "../service/encomenda/alterarEncomendaServic
 import deletarEncomendasService from "../service/encomenda/deletarEncomendaService.js";
 
 import { Router } from "express";
+import alterarStatus from "../service/encomenda/alterarStatusService.js";
+import alterarStatusService from "../service/encomenda/alterarStatusService.js";
 const endpoints = Router();
 
 endpoints.post("/encomendas/", async (req, resp) => {
@@ -39,6 +41,20 @@ endpoints.put("/encomendas/:id", async (req, resp) => {
 
     await alterarEncomendaService(encomendas, idEncomendas);
     resp.send();
+  } catch (err) {
+    resp.status(400).send({
+      erro: err.message,
+    });
+  }
+});
+
+endpoints.put("/editar-status/:id", async (req, resp) => {
+  try {
+    let idEncomendas = req.params.id;
+    let status = req.body;
+
+    await alterarStatusService(status, idEncomendas);
+    resp.send("oi");
   } catch (err) {
     resp.status(400).send({
       erro: err.message,
