@@ -17,7 +17,8 @@ endpoints.post('/unidade', async (req, resp) =>{
     try{
         let unidade = req.body
         let id = await inseriUnidadeService(unidade)
-        console.log(id)
+        resp.send(id)
+    
     }
     catch(err){
         resp.status(400).send({

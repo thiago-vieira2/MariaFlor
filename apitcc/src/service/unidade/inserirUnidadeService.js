@@ -6,7 +6,6 @@ export default async function inseriUnidadeService(unidade){
     validarCamposObrigatoriosUnidade(unidade)
 
     let id = await inserirUnidade(unidade);
-    console.log(id)
 
     return id;
 
