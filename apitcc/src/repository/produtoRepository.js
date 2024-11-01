@@ -64,3 +64,86 @@ export async function deletarProduto(id) {
 
     return info.affectedRows
 }
+
+
+
+
+// FILTROS DOS PRODUTOS
+
+
+export async function filtrarProdutoOrdemAlfabetica(){
+    const comando = `
+    select *
+    from tb_produtos
+    order by nomeproduto asc;
+    `
+    let info = await con.query(comando)
+    let resposta = info[0]
+
+    return resposta
+}
+
+
+export async function filtrarProdutoPorId() {
+    const comando = `
+    select id_produto
+    from tb_produtos
+    order by id_produto asc;
+    `
+    let info = await con.query(comando)
+    let resposta = info[0]
+
+    return resposta
+}
+
+export async function filtrarProdutoDoces() {
+    const comando = `
+    select *
+    from tb_produtos
+    where categoria = 'doces'
+    order by nomeproduto asc;
+    `
+    let info = await con.query(comando)
+    let resposta = info[0]
+
+    return resposta
+}
+
+export async function filtrarProdutoSalgados() {
+    const comando = `
+    select *
+    from tb_produtos
+    where categoria = 'salgados'
+    order by nomeproduto asc;
+    `
+    let info = await con.query(comando)
+    let resposta = info[0]
+
+    return resposta
+}
+
+export async function filtrarProdutoDiet() {
+    const comando = `
+    select diet
+    from tb_produtos
+    group by diet
+    order by diet desc;
+    `
+    let info = await con.query(comando)
+    let resposta = info[0]
+
+    return resposta
+}
+
+export async function filtrarProdutoZeroAcucar() {
+    const comando = `
+    select zeroAcucar
+    from tb_produtos
+    group by zeroAcucar
+    order by zeroAcucar DESC;
+    `
+    let info = await con.query(comando)
+    let resposta = info[0]
+
+    return resposta
+}
