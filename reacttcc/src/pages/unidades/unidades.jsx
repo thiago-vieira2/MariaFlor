@@ -42,6 +42,7 @@ function Unidades() {
 
         <div className='cards'>
         {ListaUnidade.map(u => <CardUnidade
+            key={u.id_unidade}
             img={u.img}
             endereco={u.endereco}
             abre={u.abre}
