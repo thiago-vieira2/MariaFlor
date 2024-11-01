@@ -101,7 +101,7 @@ function Encomendas() {
           {status == 'todos'?
           listaEncomendas.map(e => (
             <CardEncomenda
-              key={e.id}
+              key={e.id_encomenda}
               id={e.id_encomenda}
               status={e.status}
               nome={e.nome}
@@ -116,7 +116,7 @@ function Encomendas() {
 
           Filtrados.map(e => (
             <CardEncomenda
-              key={e.id}
+              key={e.id_encomenda}
               id={e.id_encomenda}
               status={e.status}
               nome={e.nome}

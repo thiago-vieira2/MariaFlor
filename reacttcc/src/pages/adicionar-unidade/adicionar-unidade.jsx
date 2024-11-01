@@ -3,13 +3,24 @@ import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import Aviso from '../../components/aviso/aviso.jsx'
+import { useNavigate } from 'react-router-dom';
 
 function AddUnidade() {
+  
+  const navigate = useNavigate()
+
   const [img, setImg] = useState('');
   const [endereco, setEndereco] = useState('');
   const [abre, setAbre] = useState('');
   const [fecha, setFecha] = useState('');
   const [url_maps, setUrl_maps] = useState('');
+  const[mensagemAviso, setmensagemAviso] = useState('')
+  const[AvisoTipo, setAvisoTipo] = useState('')
+  const FecharAviso = () => {
+    setmensagemAviso('');
+};
+
 
   const inputFileRef = useRef(null);
   const pictureImageRef = useRef(null);
@@ -25,11 +36,16 @@ function AddUnidade() {
       fecha: fecha,
       url_maps: url_maps
     };
-
-    const url = 'http://localhost:7000/encomendas';
+    const url = 'http://localhost:7000/unidade';
     let resp = await axios.post(url, paramCorpo);
-
+    setmensagemAviso('Unidade adicionada com sucesso!')
+    console.log(mensagemAviso)
+    setAvisoTipo('success')
+    setTimeout(() => navigate("/unidades"), 3000);
   }
+
+
+ 
 
   useEffect(() => {
     pictureImageRef.current.innerHTML = pictureImageTxt;
@@ -62,6 +78,12 @@ function AddUnidade() {
 
   return (
     <div className="add-uni">
+      <Aviso
+        message={mensagemAviso}
+        onClose={FecharAviso}
+        duration={3000}
+        type={AvisoTipo}
+      />
       <header className="cabecalho">
         <Cabecalho />
       </header>
@@ -82,7 +104,7 @@ function AddUnidade() {
               id="picture__input"
               ref={inputFileRef}
               onChange={e => {
-                setImg(e.target.value); // Este valor não será o correto para a imagem, considere usar um estado diferente.
+                setImg(e.target.value); 
               }}
             />
           </div>

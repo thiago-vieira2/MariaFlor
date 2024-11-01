@@ -26,8 +26,9 @@ function AddEncomenda() {
 
     const url = 'http://localhost:7000/encomendas';
     let resp = await axios.post(url, paramCorpo);
-    setAbrirAviso(true)
-    setmensagemAviso('Encomenda adiconada com sucesso!')
+    console.log(resp)
+    setmensagemAviso('Encomenda adicionada com sucesso!')
+    console.log(mensagemAviso)
     setAvisoTipo('success')
     setTimeout(() => navigate("/encomendas"), 3000);
 
@@ -41,7 +42,6 @@ function AddEncomenda() {
   const [formaPagamento, setFormaPagamento] = useState('')
   const [valor, setValor] = useState('')
   const[mensagemAviso, setmensagemAviso] = useState('')
-  const[AbrirAviso, setAbrirAviso] = useState(false)
   const[AvisoTipo, setAvisoTipo] = useState('')
   const FecharAviso = () => {
     setmensagemAviso('');

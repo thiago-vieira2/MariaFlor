@@ -5,11 +5,15 @@ export  function validarCamposObrigatoriosUnidade(unidade){
         throw new Error('Unidade do endereço obrigatório')
 
     }
-    if(!produto.hr_funcionamento){
+    if(!unidade.abre){
         throw new Error('Horario de funcionamento obrigatório')
 
     }
-    if(!produto.url_maps){
+    if(!unidade.fecha){
+        throw new Error('Horario de funcionamento obrigatório')
+
+    }
+    if(!unidade.url_maps){
         throw new Error('Url maps obrigatório')
     }
 }
