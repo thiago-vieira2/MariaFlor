@@ -5,42 +5,6 @@ import CardEncomenda from '../../components/card-encomenda/cardEncomenda.jsx';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const encomendas = [
-  {
-    "id": 1,
-    "status":"Pendente",
-    "nome":"Bernardo",
-    "contato":"11983008066",
-    "data_entrega":"30/05/2025",
-    "hora_entrega":"15:30",
-    "forma_pagamento":"Crédito",
-    "descricao":"1x coxinha de costela, 1x bolo de cenoura",
-    "valor":"120,00"
-  },
-  {
-    "id": 2,
-    "status":"Con",
-    "nome":"Bernardo",
-    "contato":"11983008066",
-    "data_entrega":"30/05/2025",
-    "hora_entrega":"15:30",
-    "forma_pagamento":"Crédito",
-    "descricao":"1x coxinha de costela, 1x bolo de cenoura",
-    "valor":"120,00"
-  },
-  {
-    "id": 3,
-    "status":"Pendente",
-    "nome":"Bernardo",
-    "contato":"11983008066",
-    "data_entrega":"30/05/2025",
-    "hora_entrega":"15:30",
-    "forma_pagamento":"Crédito",
-    "descricao":"1x coxinha de costela, 1x bolo de cenoura",
-    "valor":"120,00"
-  }
-];
-
 function Encomendas() {
   const [listaEncomendas, setListaEncomendas] = useState([]); 
   const [status, setStatus] = useState('todos');
@@ -107,7 +71,7 @@ function Encomendas() {
               nome={e.nome}
               contato={e.contato}
               data_entrega={new Date(e.data_entrega) .toLocaleDateString()}
-              hora_entrega={e.hora_entrega}
+              hora_entrega={e.hora_entrega.slice(0, 5)}
               forma_pagamento={e.forma_pagamento}
               descricao={e.descricao}
               valor={e.valor}
