@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 
-function CardUnidade({img,endereco,abre,fecha,url, id}) {
+function CardUnidade({foto,endereco,abre,fecha,url, id}) {
 
   async function apagar(){
       
@@ -14,7 +14,7 @@ function CardUnidade({img,endereco,abre,fecha,url, id}) {
   return (
     <div className="card-unidade">
         
-          <img className="imagem" src="./images/doceria.jpg" alt="" width={200}/>
+          <img className="imagem" src={foto} alt="" width={200}/>
 
         <div className='resto-unidade'>
           <div className='cima'>

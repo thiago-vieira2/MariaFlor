@@ -11,26 +11,32 @@ const endpoints = Router();
 
 
 
+import multer from 'multer';
 
+const upload = multer({ dest: 'uploads/' }); 
 
-endpoints.post('/unidade', async (req, resp) =>{
-    try{
-        let unidade = req.body
-        let id = await inseriUnidadeService(unidade)
-        resp.send(id)
-    
-    }
-    catch(err){
+endpoints.post('/unidade', upload.single('foto'), async (req, resp) => {
+    try {
+        if (!req.file) {
+            return resp.status(400).send({ erro: 'Arquivo de imagem não enviado' });
+        }
+
+        let unidade = req.body;
+
+        if (!unidade.endereco || !unidade.abre || !unidade.fecha || !unidade.url_maps) {
+            return resp.status(400).send({ erro: 'Todos os campos devem ser preenchidos' });
+        }
+
+        unidade.foto = req.file.path; 
+        let id = await  inseriUnidadeService(unidade);  
+        resp.send({ novoId: id });
+    } catch (err) {
+        console.error(err);  
         resp.status(400).send({
             erro: err.message
-        })
+        });
     }
-})
-
-
-
-
-
+});
 
 
 endpoints.get('/unidade', async (req, resp) =>{
@@ -44,13 +50,6 @@ endpoints.get('/unidade', async (req, resp) =>{
         })
     }
 })
-
-
-
-
-
-
-
 
 endpoints.put('/unidade/:id', async (req, resp)=> {
     try{
@@ -67,11 +66,6 @@ endpoints.put('/unidade/:id', async (req, resp)=> {
         })
     }
 })
-
-
-
-
-
 
 
 endpoints.delete('/unidade/:id', async (req, resp) => {

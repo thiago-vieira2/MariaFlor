@@ -3,49 +3,57 @@ import Cabecalho from '../../components/cabecalho/cabecalho.jsx';
 import Rodape from '../../components/rodape/rodape.jsx';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import Aviso from '../../components/aviso/aviso.jsx'
+import Aviso from '../../components/aviso/aviso.jsx';
 import { useNavigate } from 'react-router-dom';
 
 function AddUnidade() {
-  
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [img, setImg] = useState('');
   const [endereco, setEndereco] = useState('');
   const [abre, setAbre] = useState('');
   const [fecha, setFecha] = useState('');
   const [url_maps, setUrl_maps] = useState('');
-  const[mensagemAviso, setmensagemAviso] = useState('')
-  const[AvisoTipo, setAvisoTipo] = useState('')
-  const FecharAviso = () => {
-    setmensagemAviso('');
-};
-
-
+  const [mensagemAviso, setmensagemAviso] = useState('');
+  const [AvisoTipo, setAvisoTipo] = useState('');
   const inputFileRef = useRef(null);
   const pictureImageRef = useRef(null);
   const pictureImageTxt = "Buscar imagem no dispositivo";
 
- 
+  const FecharAviso = () => {
+    setmensagemAviso('');
+  };
 
   async function salvar() {
-    let paramCorpo = {
-      img: img,
-      endereco: endereco,
-      abre: abre,
-      fecha: fecha,
-      url_maps: url_maps
-    };
+    if (!inputFileRef.current || !inputFileRef.current.files.length) {
+      setmensagemAviso('Por favor, selecione uma imagem.');
+      setAvisoTipo('error');
+      return; 
+    }
+    
+    const formData = new FormData();
+    formData.append('foto', inputFileRef.current.files[0]);
+    formData.append('endereco', endereco);
+    formData.append('abre', abre);
+    formData.append('fecha', fecha);
+    formData.append('url_maps', url_maps);
+
     const url = 'http://localhost:7000/unidade';
-    let resp = await axios.post(url, paramCorpo);
-    setmensagemAviso('Unidade adicionada com sucesso!')
-    console.log(mensagemAviso)
-    setAvisoTipo('success')
-    setTimeout(() => navigate("/unidades"), 3000);
+
+    try {
+      await axios.post(url, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      
+      setmensagemAviso('Unidade adicionada com sucesso!');
+      setAvisoTipo('success');
+      setTimeout(() => navigate("/unidades"), 3000);
+    } catch (error) {
+      setmensagemAviso('Erro ao adicionar unidade');
+      setAvisoTipo('error');
+    }
   }
-
-
- 
 
   useEffect(() => {
     pictureImageRef.current.innerHTML = pictureImageTxt;
@@ -99,13 +107,11 @@ function AddUnidade() {
               <span className="picture__image" ref={pictureImageRef}></span>
             </label>
             <input
+              id="picture__input"  
               type="file"
-              name="picture__input"
-              id="picture__input"
-              ref={inputFileRef}
-              onChange={e => {
-                setImg(e.target.value); 
-              }}
+              ref={inputFileRef}  
+              style={{ display: 'none' }}
+              accept="image/*"  
             />
           </div>
 

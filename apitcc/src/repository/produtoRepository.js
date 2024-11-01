@@ -33,6 +33,18 @@ export async function consultarProduto(){
     return resposta
 }
 
+export async function consultarUnidadesFiltro(filtro) {
+    const comando = `
+    
+    select *
+    from tb_unidade
+    where status = ?;
+    `
+    let info = await con.query(comando, [filtro])
+    let respostas = info[0]
+    return respostas
+}
+
 export async function alterarProduto(produto, idProduto) {
    const comando = `
     update tb_produtos
