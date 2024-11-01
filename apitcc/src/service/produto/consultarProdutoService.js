@@ -1,11 +1,10 @@
-import { consultarProdutoService } from "../repository/produtoRepository";
+import { consultarProduto } from "../../repository/produtoRepository.js";
 
-export default async function consultarProdutoService(id){
+export default async function consultarProdutoService(){
 
-    let registros = await consultarProdutoService(id);
+    let registros = await consultarProduto()
 
-    let produto = registros[0];
+    return registros
 
-    return produto;
-    
+
 }
