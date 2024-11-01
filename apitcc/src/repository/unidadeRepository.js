@@ -32,13 +32,14 @@ export async function consultarUnidade() {
 export async function alterarUnidade( idunidade, unidade) {
     const comando = `
         update tb_unidade
-        set endereco = ?, 
+        set foto = ? 
+        endereco = ?, 
         abre = ?,
         fecha=?,
         url_maps = ?
         where id_unidade = ?;
     `  
-    let resposta = await con.query(comando, [unidade.endereco, unidade.abre,unidade.fecha, unidade.url_maps, idunidade])
+    let resposta = await con.query(comando, [unidade.foto, unidade.endereco, unidade.abre, unidade.fecha, unidade.url_maps])
     let info = resposta[0]
 
     return info.affectedRows

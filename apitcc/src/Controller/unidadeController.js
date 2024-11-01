@@ -14,6 +14,7 @@ import multer from 'multer';
 const upload = multer({ storage: multer.memoryStorage() }); 
 
 
+import multer from 'multer';
 
 endpoints.post('/unidade', upload.single('foto'), async (req, resp) =>{
     try{
@@ -31,14 +32,9 @@ endpoints.post('/unidade', upload.single('foto'), async (req, resp) =>{
     catch(err){
         resp.status(400).send({
             erro: err.message
-        })
+        });
     }
-})
-
-
-
-
-
+});
 
 
 endpoints.get('/unidade', async (req, resp) =>{
@@ -52,13 +48,6 @@ endpoints.get('/unidade', async (req, resp) =>{
         })
     }
 })
-
-
-
-
-
-
-
 
 endpoints.put('/unidade/:id', async (req, resp)=> {
     try{
@@ -75,11 +64,6 @@ endpoints.put('/unidade/:id', async (req, resp)=> {
         })
     }
 })
-
-
-
-
-
 
 
 endpoints.delete('/unidade/:id', async (req, resp) => {
