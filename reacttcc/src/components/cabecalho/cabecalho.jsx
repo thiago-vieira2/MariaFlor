@@ -23,7 +23,6 @@ function Cabecalho() {
           <a href="/encomendas">Encomendas</a>
           <a href="/unidades">Unidades</a>
           <a href="/contato">Contato</a>
-          <a href="">Dashboard</a>
         </nav>
         <a className='botao-adm'><img src="./images/user.png" alt="ADM" width={34.5}/> ADM</a>
       </header>

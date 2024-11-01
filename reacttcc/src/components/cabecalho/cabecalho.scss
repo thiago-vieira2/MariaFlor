@@ -21,7 +21,7 @@ width: 100%;
 
     .principal {
         display: flex;
-        justify-content:center; // Centraliza o conteúdo
+        justify-content:space-around; // Centraliza o conteúdo
         align-items: center;
         position:relative;
         padding: 2% 0; // Adiciona um pouco de espaçamento vertical
@@ -52,7 +52,7 @@ width: 100%;
         a{
             text-decoration: none;
             color: #50301e; // Cor do texto
-            font: 600 18px 'K2D'; // Estilo da fonte
+            font: 500 20px 'K2D'; // Estilo da fonte
             padding: 10px 20px; // Espaçamento interno
             border-radius: 5%; // Bordas arredondadas
             transition: background-color 0.3s, transform 0.3s; // Transição suave para hover
