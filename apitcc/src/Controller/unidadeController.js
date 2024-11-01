@@ -9,13 +9,21 @@ import { Router } from "express"
 const endpoints = Router();
 
 
+import multer from 'multer';
+
+const upload = multer({ storage: multer.memoryStorage() }); 
 
 
 
-
-endpoints.post('/unidade', async (req, resp) =>{
+endpoints.post('/unidade', upload.single('foto'), async (req, resp) =>{
     try{
-        let unidade = req.body
+        let unidade = {
+            foto: req.file.buffer,
+            endereco: req.body.endereco,
+            abre: req.body.abre,
+            fecha: req.body.fecha,
+            url_maps: req.body.url_maps,
+        }
         let id = await inseriUnidadeService(unidade)
         resp.send(id)
     
